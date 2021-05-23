@@ -1,0 +1,6 @@
+build/**/*
+coverage/**/*
+stylelint/**/*
+babel.config.js
+commitlint.config.js
+stylelint.config.js

@@ -1,0 +1,1 @@
+export { SearchCourse } from './SearchCourse';

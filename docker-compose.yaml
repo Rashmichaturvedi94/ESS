@@ -1,0 +1,53 @@
+version: '3.8'
+
+volumes:
+  postgres:
+  backend-data:
+  base-data:
+  frontend-node-modules:
+
+services:
+  backend:
+    image: ess/backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+      target: dev
+    stdin_open: true
+    tty: true
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/code/
+      - backend-data:/data/
+    command: bash -c "waitforit -host=postgres -port=5432 --timeout 30 && python3 /code/manage.py collectstatic --noinput && python3 /code/manage.py migrate && python3 /code/manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13.2-alpine
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - .env
+    logging:
+      driver: none
+
+  frontend:
+    image: ess/frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    build:
+      context: ./frontend
+      target: dev
+    command: sh -c "export PORT=3000 && yarn install --frozen-lockfile && exec yarn start"
+    stdin_open: true
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/code
+      - frontend-node-modules:/code/node_modules
