@@ -5,7 +5,7 @@ The project will provide the platform to learner which will be available around 
 
 The application is using React Native CLI. The code editor used is [Visual Studio Code](https://code.visualstudio.com/)
 
-# Builing instructions
+# Building instructions
 
 Run command
 ```
