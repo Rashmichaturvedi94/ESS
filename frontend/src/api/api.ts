@@ -73,7 +73,7 @@ axios.interceptors.response.use(
         endpoints.refreshToken,
         data,
       );
-      
+
       if (response.status === 200) {
         await setAccessToken(response.data.access);
         return axios(originalRequest);
@@ -89,10 +89,6 @@ export const queryClient = new QueryClient();
 export const createQueryFn = <ResponseData>(config: RequestConfig) => async ({
   queryKey,
 }: QueryFunctionContext<object[]>): Promise<ResponseData> => {
-  // queryKey is used to build out a hash value to identify cached api data (react-query),
-  // it is also used to pull out the path params (from arbitrary position at index 1) to build out the url - such as e.g. api/foo/${pathParam}/bar
-  // it is a temp. solution which may require refactoring
-  // refactoring would require many changes in api.hooks and possibly other files
 
   const pathParams = typeof queryKey === 'string' ? {} : queryKey[1];
 

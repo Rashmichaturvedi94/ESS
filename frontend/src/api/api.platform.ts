@@ -1,10 +1,11 @@
+import { paths } from '../const/paths';
 import { Storage } from './api.interface';
 
 export const getBaseUrl = () => process.env.REACT_APP_API_URL;
 
 export const logout = () => {
-  if (window.location.pathname !== 'login') {
-    window.location.href = 'login';
+  if (window.location.pathname !== paths.login) {
+    window.location.href = paths.login;
   }
 };
 
