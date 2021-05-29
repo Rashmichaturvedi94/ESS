@@ -28,7 +28,7 @@ export const useLogin = () =>
             resolve({ access, refresh });
           } else {
             const message = 
-              'No active account found with the given credentials';
+              'Username and password is not associated to any account.';
             const error: AccessError = {
               name: 'AccessError',
               message,
