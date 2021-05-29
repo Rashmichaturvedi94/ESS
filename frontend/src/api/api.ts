@@ -51,11 +51,9 @@ axios.interceptors.response.use(
 
     const refreshToken = await getRefreshToken();
 
-    // Invalid refresh token
     if (
       !refreshToken ||
       (error.response?.status === 401 &&
-        // NOTE: check user access endpoints to make sure we do not end up in a refresh loop
         [endpoints.refreshToken, endpoints.login, endpoints.register].some(
           (endpoint) => endpoint === originalRequest.url,
         ))
@@ -75,8 +73,7 @@ axios.interceptors.response.use(
         endpoints.refreshToken,
         data,
       );
-
-      // Token refreshed successfully
+      
       if (response.status === 200) {
         await setAccessToken(response.data.access);
         return axios(originalRequest);

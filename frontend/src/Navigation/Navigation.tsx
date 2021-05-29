@@ -44,12 +44,11 @@ export const Navigation: FC = () => (
           p={4}
         >
           <Switch>
-            {/* TODO: Replace placeholder components once screens are implemented */}
             <AuthRoute
               path={appPaths.searchCourse}
               component={SearchCourse}
             />
-            <Redirect from={paths.app} to="/" />
+            <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>
         </Box>
       </Box>
