@@ -15,6 +15,7 @@ export enum QueryKeys {
   login = 'login',
   refreshToken = 'refreshToken',
   register = 'register',
+  courses = 'courses',
 }
 
 export interface RequestConfig extends AxiosRequestConfig {
@@ -69,3 +70,13 @@ export interface RefreshTokenPayload {
 export interface RefreshTokenResponse {
   access: string;
 }
+
+export interface Course {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  created_by: number;
+}
+
+export type CoursesResponse = Course[];

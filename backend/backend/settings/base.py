@@ -44,7 +44,7 @@ sys.path.append(os.path.join(PROJECT_ROOT, "apps/"))
 
 
 # Application definition
-PROJECT_APPS = ["backend.apps.api"]
+PROJECT_APPS = ["backend.apps.api", "backend.apps.course"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -3,6 +3,7 @@ from django.conf.urls import url
 from django.urls import path, include
 from rest_framework import routers
 from backend.apps.api.views import UserViewSet, EssTokenObtainPairView
+from backend.apps.course.views import CourseViewSet
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularSwaggerView,
@@ -10,6 +11,7 @@ from drf_spectacular.views import (
 
 router = routers.SimpleRouter()
 router.register("users", UserViewSet)
+router.register("courses", CourseViewSet, basename="courses")
 
 urlpatterns = router.urls
 
@@ -26,5 +28,5 @@ urlpatterns += [
         "token/",
         EssTokenObtainPairView.as_view(),
         name="token_obtain_pair",
-    ),
+    )
 ]

@@ -5,7 +5,7 @@ import {
   Login as LoginComponent
 } from './Login.styles';
 import { LoginForm } from '../../components/LoginForm';
-import { useLogin } from '../../api/api.hooks';
+import { useLogin } from '../../api';
 import { paths } from '../../const/paths';
 
 export const Login: FC = () => {

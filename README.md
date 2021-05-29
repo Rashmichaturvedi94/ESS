@@ -16,8 +16,3 @@ backend will be available on
 http://localhost:8000
 swagger - http://localhost:8000/api/swagger
 frontend - http://localhost:3000
-
-Create super user/admin using following command
-```
-docker exec -it {container_id} python manage.py createsuperuser
-```

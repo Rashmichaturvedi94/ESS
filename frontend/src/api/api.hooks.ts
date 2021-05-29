@@ -1,15 +1,16 @@
-import { useMutation } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import jwt_decode from 'jwt-decode';
 import {
   AccessError,
   AccessToken,
   ApiError,
+  CoursesResponse,
   LoginPayload,
   LoginResponse,
   QueryKeys,
   QueryParams,
 } from './api.interface';
-import { createMutationFn } from './api';
+import { createMutationFn, createQueryFn } from './api';
 import { getEndpoint } from './api.endpoints';
 import { setToken } from './api.helpers';
 
@@ -43,3 +44,11 @@ export const useLogin = () =>
         }).then(setToken),
     },
   );
+
+export const useCourses = () =>
+    useQuery<CoursesResponse>({
+      queryFn: createQueryFn({
+        url: getEndpoint(QueryKeys.courses),
+      }),
+      queryKey: QueryKeys.courses,
+    });

@@ -8,6 +8,7 @@ export const endpoints: Endpoints = {
   login: 'token/',
   refreshToken: 'token/refresh/',
   register: 'register/',
+  courses: 'courses/',
 };
 
 export const getEndpoint = (key: QueryKeys) => endpoints[key];
