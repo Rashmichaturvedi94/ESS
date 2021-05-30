@@ -29,6 +29,7 @@ export const Login: FC = () => {
           <Button
             fullWidth
             variant="text"
+            onClick={() => history.push(paths.register)}
           >
             Register
           </Button>
