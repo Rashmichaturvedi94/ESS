@@ -6,12 +6,13 @@ import {
   Toolbar,
   Divider,
 } from '@material-ui/core';
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import {
   Navigation as NavigationComponent,
   MyAvatar,
+  Title,
+  HomeLink,
 } from './Navigation.styles';
-
-import { Logo } from '../components/icons/Logo';
 import { AuthRoute } from '../components/AuthRoot';
 import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
@@ -19,12 +20,20 @@ import { SearchCourse } from '../containers/SearchCourse';
 export const Navigation: FC = () => (
     <NavigationComponent>
       <AppBar position="relative" elevation={0}>
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: 'black' }}>
           <Box flex={1} display="flex">
-            <Link to='/'>
-              <Logo />
-            </Link>
+            <Box display="flex" flex={1}>
+              <Link to={paths.app}>
+                <Box display="flex" flexDirection="row" flex={1}>
+                  <ImportContactsIcon style={{ color: 'white', fontSize: 44 }} />
+                  <Title>Genious</Title>
+                </Box>
+              </Link>
+            </Box>
             <Box alignItems="center" display="flex" gridColumnGap={10}>
+              <Link to={paths.app}>
+                <HomeLink>Home</HomeLink>
+              </Link>
               <Link to={appPaths.user}>
                 <MyAvatar />
               </Link>

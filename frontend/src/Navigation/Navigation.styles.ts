@@ -1,4 +1,4 @@
-import { Avatar } from '@material-ui/core';
+import { Avatar, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 
 export const Navigation = styled.div`
@@ -19,4 +19,16 @@ export const MyAvatar = styled(Avatar)`
     box-sizing: border-box;
     border-radius: 50%;
   }
+`;
+
+export const Title = styled(Typography)`
+  color: white;
+  font-size: 26px;
+  margin: 8px;
+`;
+
+export const HomeLink = styled(Typography)`
+  color: white;
+  font-size: 26px;
+  margin: 8px;
 `;
