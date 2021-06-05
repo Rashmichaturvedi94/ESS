@@ -2,13 +2,14 @@ import React, { FC } from 'react';
 import { Box, FormHelperText } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import * as Yup from 'yup';
-import { NameField, UsernameField, PasswordField } from './RegisterForm.styles';
+import { NameField, UsernameField, EmailField, PasswordField } from './RegisterForm.styles';
 import { useForm } from '../../hooks/useForm';
 import { RegisterFormProps, RegisterFormValues } from './RegisterForm.interface';
 
 const initialValues: RegisterFormValues = {
   name: '',
   username: '',
+  email: '',
   password: '',
   password2: '',
 };
@@ -16,6 +17,7 @@ const initialValues: RegisterFormValues = {
 const validationSchema: Yup.SchemaOf<RegisterFormValues> = Yup.object().shape({
   name: Yup.string().required('Required field'),
   username: Yup.string().required('Required field'),
+  email: Yup.string().required('Required field'),
   password: Yup.string().required('Required field'),
   password2: Yup.string().required('Required field'),
 });
@@ -51,6 +53,15 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
           value={values.username}
           onChange={handleChange}
         />
+        <EmailField
+          fullWidth
+          name="email"
+          placeholder='Email'
+          error={!!errors.email}
+          helperText={errors.email}
+          value={values.email}
+          onChange={handleChange}
+        />
         <PasswordField
           fullWidth
           name="password"
@@ -72,7 +83,7 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
           onChange={handleChange}
         />
         <Button type="submit" variant="contained" fullWidth>
-          Sign In
+          Register
         </Button>
       </Box>
     </form>
