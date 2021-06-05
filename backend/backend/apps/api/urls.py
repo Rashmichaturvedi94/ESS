@@ -9,6 +9,10 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
+from rest_framework_simplejwt.views import (
+    TokenRefreshView,
+)
+
 router = routers.SimpleRouter()
 router.register("users", UserViewSet)
 router.register("courses", CourseViewSet, basename="courses")
@@ -28,5 +32,10 @@ urlpatterns += [
         "token/",
         EssTokenObtainPairView.as_view(),
         name="token_obtain_pair",
-    )
+    ),
+    path(
+        "token/refresh/",
+        TokenRefreshView.as_view(),
+        name="token_refresh",
+    ),
 ]
