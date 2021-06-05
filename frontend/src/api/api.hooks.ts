@@ -25,7 +25,7 @@ export const useLogin = () =>
       onSuccess: ({ access, refresh }) =>
         new Promise<LoginResponse>((resolve, reject) => {
           const decoded = jwt_decode<AccessToken>(access);
-          if (decoded.is_staff) {
+          if (decoded) {
             resolve({ access, refresh });
           } else {
             const message = 
