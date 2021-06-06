@@ -10,5 +10,6 @@ class SubSerializer(ModelSerializer):
       "price",
       "timestamp",
       "updated",
-      "subscriber"
+      "subscriber",
+      "course"
     ]
