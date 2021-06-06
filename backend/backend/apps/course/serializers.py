@@ -1,3 +1,4 @@
+from backend.apps.course.models import CourseContents
 from django.db.models import fields
 from rest_framework.serializers import ModelSerializer
 
@@ -17,4 +18,20 @@ class CourseSerializer(ModelSerializer):
       "timestamp",
       "updated",
       "img"
+    ]
+
+class CourseContentsSerializer(ModelSerializer):
+  class Meta:
+    model = CourseContents
+    fields = [
+      "id",
+      "title",
+      "description",
+      "course",
+      "position",
+      "file",
+      "url",
+      "created_by",
+      "timestamp",
+      "updated"
     ]
