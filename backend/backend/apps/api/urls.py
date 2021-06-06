@@ -1,3 +1,4 @@
+from backend.apps.sub.views import SubViewSet
 from django.contrib import admin
 from django.conf.urls import url
 from django.urls import path, include
@@ -16,6 +17,7 @@ from rest_framework_simplejwt.views import (
 router = routers.SimpleRouter()
 router.register("users", UserViewSet)
 router.register("courses", CourseViewSet, basename="courses")
+router.register("subscriptions",SubViewSet,basename="subscriptions")
 
 urlpatterns = router.urls
 
