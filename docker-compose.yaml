@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 volumes:
   postgres:
@@ -35,8 +35,6 @@ services:
       - .env
     logging:
       driver: none
-    ports:
-      - 5432:5432
 
   frontend:
     image: ess/frontend
