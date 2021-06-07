@@ -1,39 +1,38 @@
 import React, { FC } from "react";
+import { Box } from "@material-ui/core";
+// import Image from 'react-bootstrap/Image';
 
-import { useHistory, generatePath } from "react-router-dom";
-import { GridList, Typography, GridListTile } from "@material-ui/core";
-import { useCourses } from "../../api";
-import { appPaths } from "../../const/paths";
+import { useUser } from "../../api";
+import { getUserIdFromLocalStorage } from "../../api/api.helpers";
+import { SubContainer } from "./Subscription.styles";
+import { SubscriptionForm } from "../../components/SubscriptionForm";
 
 export const Subscription: FC = () => {
-  const courses = useCourses();
-  const history = useHistory();
+  const user = useUser({ userId: getUserIdFromLocalStorage() });
+
   return (
-    <GridList>
-      {courses.data?.map((course) => (
-        <GridListTile
-          key={course.id}
-          style={{
-            height: 258,
-            width: 224,
-            border: "2px solid black",
-            margin: 8,
-          }}
-          onClick={() =>
-            history.push(
-              generatePath(appPaths.subscribeCourse, { courseId: course.id })
-            )
-          }
-        >
-          <img
-            src="https://blog.wildix.com/wp-content/uploads/2020/06/react-logo.jpg"
-            style={{ height: 196, width: 220, overflow: "hidden" }}
-            alt={course.title}
+    <SubContainer>
+      <Box flex={1} display="flex" alignItems="center" justifyContent="center">
+        <Box width="40%" height="60%"  border={5}>
+          <h1>IMG BOX</h1>
+          {/* <Image src=
+            'https://marvel-b1-cdn.bc0a.com/f00000000156946/www.jrebel.com/sites/rebel/files/image/2020-05/image-blog-revel-top-java-tools.jpg'
+            roundedCircle/>; */}
+        </Box>
+        <Box display="flex" flexDirection="column" width="40%" height="60%" marginLeft='50px'>
+          <SubscriptionForm
+            initialValues={{
+              title: user.data?.username ?? "",
+              description: user.data?.username ?? "",
+              price: user.data?.email ?? "",
+              method: user.data?.email ?? "",
+            }}
+            onSubmit={(data) => {
+              console.log(data);
+            }}
           />
-          <Typography>{course.title}</Typography>
-          <Typography>{course.description}</Typography>
-        </GridListTile>
-      ))}
-    </GridList>
+        </Box>
+      </Box>
+    </SubContainer>
   );
 };
