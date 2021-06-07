@@ -18,6 +18,7 @@ import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
 import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
+import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
 
 export const Navigation: FC = () => (
     <NavigationComponent>
@@ -67,8 +68,12 @@ export const Navigation: FC = () => (
               component={Profile}
             />
             <AuthRoute
-            path={appPaths.createCourse}
-            component={Course}
+              path={appPaths.createCourse}
+              component={Course}
+            />
+            <AuthRoute
+              path={appPaths.courseDetail}
+              component={CourseDetailSubscribe}
             />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>

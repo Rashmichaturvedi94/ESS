@@ -17,6 +17,7 @@ export enum QueryKeys {
   register = 'register',
   courses = 'courses',
   user = 'user'
+  course = 'course'
 }
 
 export interface RequestConfig extends AxiosRequestConfig {
@@ -104,3 +105,8 @@ export interface UserPayload {
   groups: string[];
 }
 
+export interface CourseParams {
+  courseId?: string;
+}
+
+export type CourseResponce = Course;
