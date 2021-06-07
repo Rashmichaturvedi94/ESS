@@ -18,7 +18,7 @@ class Course(models.Model):
 class CourseContents(models.Model):
     title = models.CharField(max_length = 180)
     description = models.TextField()
-    course = models.ForeignKey(Course, on_delete = models.PROTECT, blank = True, null = True)
+    course = models.ForeignKey(Course, on_delete = models.PROTECT, blank = True, null = True, related_name="contents")
     position = models.IntegerField()
     file = models.FileField()
     url = models.URLField()

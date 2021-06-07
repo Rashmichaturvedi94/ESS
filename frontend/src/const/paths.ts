@@ -12,5 +12,6 @@ export const appPaths = {
   createCourse: `${paths.app}/course`,
   courseDetail: `${paths.app}/course/:courseId`,
   courseContent: `${paths.app}/courseContent/:id`,
-  createCourseContent: `${paths.app}/createCourseContent/:id`,
+  createCourseContent: `${paths.app}/course/:courseId/createCourseContent`,
+  courseDetail: `${paths.app}/course/:courseId`,
 };

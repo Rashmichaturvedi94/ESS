@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { CourseContentProps } from './CourseContent.interface';
 
-export const CourseContent = styled.div<Pick<CourseContentProps, 'myProp'>>`
-  /* Add styles here */
+export const CourseContent = styled.div`
+flex: 1;
+display: flex;
+flex-direction: row;
 `;

@@ -7,6 +7,7 @@ import {
   CourseParams,
   CourseResponce,
   CoursesResponse,
+  CourseContentsResponse,
   LoginPayload,
   LoginResponse,
   QueryKeys,
@@ -101,3 +102,10 @@ export const useCourse = (params: CourseParams) =>
       queryKey: [QueryKeys.course, params],
     });
 
+  export const useCourseContents = () =>
+  useQuery<CourseContentsResponse>({
+    queryFn: createQueryFn({
+      url: getEndpoint(QueryKeys.courseContents),
+    }),
+    queryKey: QueryKeys.courseContents,
+  });

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link, Redirect, Route, Switch } from 'react-router-dom';
+import { Link, Redirect, Switch } from 'react-router-dom';
 import {
   Box,
   AppBar,
@@ -7,6 +7,7 @@ import {
   Divider,
 } from '@material-ui/core';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
+import { AuthRoute } from '../components/AuthRoot';
 import {
   Navigation as NavigationComponent,
   MyAvatar,
@@ -19,6 +20,7 @@ import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
 import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
 import { CreateCourseContent } from '../containers/CreateCourseContent';
+import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
 import { CourseContent } from '../containers/CourseContent';
 import { AuthRoute } from '../components/AuthRoot';
 
@@ -73,17 +75,11 @@ export const Navigation: FC = () => (
               path={appPaths.createCourse}
               component={Course}
             />
+            <AuthRoute path={appPaths.courseContent} component={CourseContent} />
+            <AuthRoute path={appPaths.createCourseContent} component={CreateCourseContent} />
             <AuthRoute
               path={appPaths.courseDetail}
               component={CourseDetailSubscribe}
-            />
-            <AuthRoute 
-              path={appPaths.courseContent} 
-              component={CourseContent} 
-            />
-            <AuthRoute 
-              path={appPaths.createCourseContent} 
-              component={CreateCourseContent} 
             />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>

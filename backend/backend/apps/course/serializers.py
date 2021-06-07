@@ -5,21 +5,6 @@ from rest_framework.serializers import ModelSerializer
 from django.db import models
 from backend.apps.course.models import Course
 
-class CourseSerializer(ModelSerializer):
-  class Meta:
-    model = Course
-    fields = [
-      "id",
-      "title",
-      "description",
-      "price",
-      "duration",
-      "created_by",
-      "timestamp",
-      "updated",
-      "img"
-    ]
-
 class CourseContentsSerializer(ModelSerializer):
   class Meta:
     model = CourseContents
@@ -27,11 +12,30 @@ class CourseContentsSerializer(ModelSerializer):
       "id",
       "title",
       "description",
+      "price",
+      "duration",
       "course",
       "position",
       "file",
       "url",
       "created_by",
       "timestamp",
-      "updated"
+      "updated",
+      "img"
     ]
+
+class CourseSerializer(ModelSerializer):
+  contents = CourseContentsSerializer(many=True, required=False)
+  class Meta:
+    model = Course
+    fields = [
+      "id",
+      "title",
+      "description",
+      "price",
+      "created_by",
+      "timestamp",
+      "updated",
+      "contents"
+    ]
+
