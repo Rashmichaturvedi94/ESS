@@ -1,6 +1,8 @@
 import { AxiosRequestConfig } from 'axios';
-import { RequestConfig } from './api.interface';
+import jwt_decode from 'jwt-decode';
+import { AccessToken, RequestConfig } from './api.interface';
 import { getStorage } from './api.platform';
+
 
 enum StorageKeys {
   ACCESS_TOKEN = 'access_token',
@@ -29,6 +31,11 @@ export const getAccessToken = () =>
 
 export const getRefreshToken = () =>
   getStorage().getItem(StorageKeys.REFRESH_TOKEN);
+
+export const getUserIdFromLocalStorage = () => {
+  const decoded = jwt_decode<AccessToken>(window.localStorage.getItem(StorageKeys.ACCESS_TOKEN) as string);
+  return decoded.user_id;
+};
 
 export const removeAccessToken = () =>
   getStorage().removeItem(StorageKeys.ACCESS_TOKEN);

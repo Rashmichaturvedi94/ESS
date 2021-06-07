@@ -9,6 +9,10 @@ import {
   LoginResponse,
   QueryKeys,
   QueryParams,
+  UsersParams,
+  UsersResponse,
+  UserPayload,
+  
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
 import { getEndpoint } from './api.endpoints';
@@ -52,3 +56,28 @@ export const useCourses = () =>
       }),
       queryKey: QueryKeys.courses,
     });
+
+export const useUser = (params: UsersParams) =>
+    useQuery<UsersResponse>({
+      queryFn: createQueryFn({
+        url: getEndpoint(QueryKeys.user),
+      }),
+      queryKey: [QueryKeys.user, params],
+    });
+
+export const useUpdateUserEmail = () =>
+    useMutation<UserPayload, ApiError<UserPayload>, QueryParams<UsersParams>>(
+      createMutationFn({
+        url: getEndpoint(QueryKeys.user),
+        method: 'PUT',
+      }),
+      {
+        mutationKey: QueryKeys.user,
+        onSuccess: (user) =>
+          new Promise<LoginResponse>(() => {
+            console.log(user);
+          }).then((data)=> {
+            console.log(data);
+          }),
+      },
+    );
