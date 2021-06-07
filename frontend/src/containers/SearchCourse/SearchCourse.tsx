@@ -8,6 +8,7 @@ import { appPaths } from '../../const/paths';
 export const SearchCourse: FC<SearchCourseProps> = () => {
   const courses = useCourses();
   const history = useHistory();
+
   return (
     <GridList>
       {courses.data?.map((course) => (

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link, Redirect, Switch } from 'react-router-dom';
+import { Link, Redirect, Route, Switch } from 'react-router-dom';
 import {
   Box,
   AppBar,
@@ -13,12 +13,14 @@ import {
   Title,
   HomeLink,
 } from './Navigation.styles';
-import { AuthRoute } from '../components/AuthRoot';
 import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
 import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
 import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
+import { CreateCourseContent } from '../containers/CreateCourseContent';
+import { CourseContent } from '../containers/CourseContent';
+import { AuthRoute } from '../components/AuthRoot';
 
 export const Navigation: FC = () => (
     <NavigationComponent>
@@ -26,7 +28,7 @@ export const Navigation: FC = () => (
         <Toolbar style={{ backgroundColor: 'black' }}>
           <Box flex={1} display="flex">
             <Box display="flex" flex={1}>
-              <Link to={paths.app}>
+              <Link to={appPaths.searchCourse}>
                 <Box display="flex" flexDirection="row" flex={1}>
                   <ImportContactsIcon style={{ color: 'white', fontSize: 44 }} />
                   <Title>Genious</Title>
@@ -74,6 +76,14 @@ export const Navigation: FC = () => (
             <AuthRoute
               path={appPaths.courseDetail}
               component={CourseDetailSubscribe}
+            />
+            <AuthRoute 
+              path={appPaths.courseContent} 
+              component={CourseContent} 
+            />
+            <AuthRoute 
+              path={appPaths.createCourseContent} 
+              component={CreateCourseContent} 
             />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>

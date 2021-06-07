@@ -18,6 +18,7 @@ export enum QueryKeys {
   courses = 'courses',
   user = 'user',
   course = 'course'
+  courseContents = 'courseContents',
 }
 
 export interface RequestConfig extends AxiosRequestConfig {
@@ -83,6 +84,17 @@ export interface Course {
   img?: File;
 }
 
+export interface CourseContents {
+  id: number;
+  title: string;
+  description: string;
+  course: number;
+  position: number;
+  file: File;
+  url: string;
+  created_by: number;
+}
+
 export type CoursesResponse = Course[];
 
 export interface UsersParams {
@@ -110,3 +122,5 @@ export interface CourseParams {
 }
 
 export type CourseResponce = Course;
+
+export type CourseContentsResponse = CourseContents[];
