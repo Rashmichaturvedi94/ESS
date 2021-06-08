@@ -20,9 +20,7 @@ import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
 import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
 import { CreateCourseContent } from '../containers/CreateCourseContent';
-import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
 import { CourseContent } from '../containers/CourseContent';
-import { AuthRoute } from '../components/AuthRoot';
 
 export const Navigation: FC = () => (
     <NavigationComponent>

@@ -15,6 +15,7 @@ import {
   UsersResponse,
   UserPayload,
   Course,
+  CourseContentsResponse,
   
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';

@@ -17,7 +17,7 @@ export enum QueryKeys {
   register = 'register',
   courses = 'courses',
   user = 'user',
-  course = 'course'
+  course = 'course',
   courseContents = 'courseContents',
   courseContent = 'courseContent',
 }
@@ -126,10 +126,6 @@ export interface CourseParams {
 export type CourseResponce = Course;
 
 export type CourseContentsResponse = CourseContents[];
-
-export interface CourseParams {
-  courseId?: string;
-}
 
 export interface CourseContentParams {
   courseId?: string;
