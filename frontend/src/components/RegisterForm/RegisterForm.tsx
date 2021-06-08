@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Box, FormHelperText } from '@material-ui/core';
+import { Box, FormHelperText, Radio, RadioGroup } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import * as Yup from 'yup';
-import { NameField, UsernameField, EmailField, PasswordField } from './RegisterForm.styles';
+import { NameField, UsernameField, EmailField, PasswordField, RadioField } from './RegisterForm.styles';
 import { useForm } from '../../hooks/useForm';
 import { RegisterFormProps, RegisterFormValues } from './RegisterForm.interface';
 
@@ -20,6 +20,7 @@ const validationSchema: Yup.SchemaOf<RegisterFormValues> = Yup.object().shape({
   email: Yup.string().required('Required field'),
   password: Yup.string().required('Required field'),
   password2: Yup.string().required('Required field'),
+  tag: Yup.string().required('Required field'),
 });
 
 export const RegisterForm: FC<RegisterFormProps> = (props) => {
@@ -29,6 +30,13 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
     ...props,
   });
 
+  const [value, setValue] = React.useState('');
+
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
+
+  // eslint-disable-next-line no-return-assign
   return (
     <form onSubmit={handleSubmit}>
       <Box display="flex" flexDirection="column" gridRowGap={20} style={{ margin: '0px 220px'}}>
@@ -82,6 +90,10 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
           value={values.password2}
           onChange={handleChange}
         />
+          <RadioGroup aria-label="Type" name="Type1" value={value} onChange={handleRadioChange}>
+            <RadioField value="Author" control={<Radio color="default" />} label="Author"/>
+            <RadioField value="Student" control={<Radio color="default"/>} label="Student" />
+          </RadioGroup>
         <Button type="submit" variant="contained" fullWidth>
           Register
         </Button>
