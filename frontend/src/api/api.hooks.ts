@@ -7,7 +7,6 @@ import {
   CourseParams,
   CourseResponce,
   CoursesResponse,
-  CourseContentsResponse,
   LoginPayload,
   LoginResponse,
   QueryKeys,
