@@ -14,5 +14,6 @@ class CourseSerializer(ModelSerializer):
       "price",
       "created_by",
       "timestamp",
-      "updated"
+      "updated",
+      "img"
     ]
