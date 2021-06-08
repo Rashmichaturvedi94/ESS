@@ -4,6 +4,8 @@ import {
   AccessError,
   AccessToken,
   ApiError,
+  CourseParams,
+  CourseResponce,
   CoursesResponse,
   LoginPayload,
   LoginResponse,
@@ -100,3 +102,12 @@ export const usePostCourse = () =>
           }),
       },
     );
+
+export const useCourse = (params: CourseParams) =>
+    useQuery<CourseResponce>({
+      queryFn: createQueryFn({
+        url: getEndpoint(QueryKeys.course),
+      }),
+      queryKey: [QueryKeys.course, params],
+    });
+
