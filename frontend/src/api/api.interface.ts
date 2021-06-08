@@ -16,7 +16,7 @@ export enum QueryKeys {
   refreshToken = 'refreshToken',
   register = 'register',
   courses = 'courses',
-  user = 'user'
+  user = 'user',
   course = 'course'
 }
 
