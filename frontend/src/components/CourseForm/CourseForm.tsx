@@ -55,12 +55,10 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
         )}
         <Typography variant="h4" component="h2" align='left'>
         Create Course
-      </Typography>
-      <Typography variant="h6" component="h2" align='left'>
-        Title
-      </Typography>
+        </Typography>
         <NameField
           fullWidth
+          label="Title"
           name="title"
           placeholder='Title'
           error={!!errors.title}
@@ -69,9 +67,9 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
           onChange={handleChange}
 
         />
-        <Typography variant="h6" component="h2" align='left'>
+        <Typography variant="body1" component="h2" align='left'>
         Description
-      </Typography>
+        </Typography>
         <DescriptionField
           name="description"
           placeholder='Description'
@@ -82,11 +80,9 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
           onChange={handleChange}
 
         />
-        <Typography variant="h6" component="h2" align='left'>
-        Price
-      </Typography>
         <NameField
           fullWidth
+          label="Price"
           name="price"
           placeholder='Price'
           error={!!errors.price}
@@ -96,9 +92,6 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
           InputProps={{ inputMode: 'numeric' }}
           type="number"
         />
-        <Typography variant="h6" component="h2" align='left'>
-        Duration
-      </Typography>
         <NameField
           fullWidth
           label="Duration"
@@ -111,13 +104,10 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
           InputProps={{ inputMode: 'numeric' }}
           type="number"
         />
-        <Typography variant="h6" component="h2" align='left'>
-        Thumbnail
-        </Typography>
         <Button
             variant="contained"
             component="label"
-            style={{backgroundColor:'white', color:'black'}}
+            style={{backgroundColor:'white', color:'black', margin: '16px 0px'}}
         >
           <CloudCircle />
             Attach File

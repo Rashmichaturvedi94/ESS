@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextField, TextareaAutosize } from '@material-ui/core';
+import { TextField, TextareaAutosize, Button } from '@material-ui/core';
 
 export const Course = styled.div`
   flex: 1;
@@ -9,11 +9,13 @@ export const Course = styled.div`
 
 export const NameField = styled(TextField)`
   height: 48px;
-  margin: 2px 1px;
+  margin: 16px 1px;
 `;
 
 export const DescriptionField = styled(TextareaAutosize)`
   height: 80px;
-  margin: 2px 1px;
 `;
 
+export const ThumbnailButton = styled(Button)`
+  margin: 16px 1px;
+`;
