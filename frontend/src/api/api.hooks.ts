@@ -76,13 +76,8 @@ export const useUpdateUserEmail = () =>
       }),
       {
         mutationKey: QueryKeys.user,
-        onSuccess: (user) =>
-          new Promise<LoginResponse>(() => {
-            console.log(user);
-          }).then((data)=> {
-            console.log(data);
-          }),
-      },
+        onSuccess: () =>{},
+      }
     );
 
 export const usePostCourse = () =>
@@ -94,12 +89,7 @@ export const usePostCourse = () =>
       }),
       {
         mutationKey: QueryKeys.courses,
-        onSuccess: (course) =>
-          new Promise<Course>(() => {
-            console.log(course);
-          }).then((data)=> {
-            console.log(data);
-          }),
+        onSuccess: () =>{}
       },
     );
 

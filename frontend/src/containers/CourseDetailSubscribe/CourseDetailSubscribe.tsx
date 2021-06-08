@@ -17,7 +17,7 @@ import { CourseParams } from '../../api/api.interface';
 export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
-  console.log(course, courseId);
+
   return ( 
     <CourseDetailSubscribeComponent>
       <Box  style={{marginLeft: 50, marginTop: 50}}>
