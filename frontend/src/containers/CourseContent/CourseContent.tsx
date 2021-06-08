@@ -11,7 +11,6 @@ import { appPaths } from '../../const/paths';
 
 function CurrentContent() {
   const  currentContent  = useParams();
-  console.log(currentContent);
   return (
     <Box>
     <Typography variant="h3" component="h2" align='center'>
@@ -26,7 +25,6 @@ export const CourseContent: FC<CourseContentProps> = () => {
 
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
-  console.log(course);
   return (
   <CourseContentComponent>
     <Router>
@@ -46,7 +44,7 @@ export const CourseContent: FC<CourseContentProps> = () => {
         
            <GridList>
              <Typography variant="h3" component="h4" align='center'>Course contents</Typography>
-              {course.data?.contents.map((content) => (
+              {course.data?.contents?.map((content) => (
                 <Link to={`${appPaths.courseContent}/${content.title.toString()}`}>
                   <GridListTile key={content.id} style={{ height: 110, width: 560, border: '2px solid black', margin: 4, fill: 'white' }}>
                     <Box flex={1} display="flex" alignItems="left" justifyContent="left" style={{backgroundColor:'#FFFFFF'}}> 

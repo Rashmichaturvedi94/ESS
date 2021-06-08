@@ -83,7 +83,7 @@ export interface Course {
   price: number;
   created_by: number;
   img?: File;
-  contents: CourseContents[];
+  contents?: CourseContents[];
 }
 
 export interface CourseContents {
