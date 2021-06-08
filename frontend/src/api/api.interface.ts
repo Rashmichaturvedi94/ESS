@@ -76,6 +76,7 @@ export interface Course {
   id?: number;
   title: string;
   description: string;
+  duration?: number;
   price: number;
   created_by: number;
   img?: File;

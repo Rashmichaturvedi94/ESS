@@ -4,6 +4,7 @@ export interface CourseFormValues {
   title: string;
   description: string;
   price: number;
+  duration?: number;
   imgSrc: string;
   created_by: number;
   img?: File;

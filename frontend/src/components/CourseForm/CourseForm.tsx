@@ -13,6 +13,7 @@ const initialValues: CourseFormValues = {
   title: '',
   description: '',
   price: 0,
+  duration: 0,
   imgSrc: 'testForNow',
   created_by: getUserIdFromLocalStorage(),
   img: undefined
@@ -22,10 +23,10 @@ const validationSchema: Yup.SchemaOf<CourseFormValues> = Yup.object().shape({
   title: Yup.string().required('Required field'),
   description: Yup.string().required('Required field'),
   imgSrc: Yup.string().required('Required field'),
+  duration: Yup.number(),
   price: Yup.number().required('Required field'),
   created_by: Yup.number().required('Required field'),
   img: Yup.object().shape({file: Yup.mixed()}).nullable()
-
 });
 
 export const CourseForm: FC<CourseFormProps> = (props) => {
@@ -96,8 +97,23 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
           type="number"
         />
         <Typography variant="h6" component="h2" align='left'>
-        Thumbnail
+        Duration
       </Typography>
+        <NameField
+          fullWidth
+          label="Duration"
+          name="duration"
+          placeholder='duration'
+          error={!!errors.duration}
+          helperText={errors.duration}
+          value={values.duration}
+          onChange={handleChange}
+          InputProps={{ inputMode: 'numeric' }}
+          type="number"
+        />
+        <Typography variant="h6" component="h2" align='left'>
+        Thumbnail
+        </Typography>
         <Button
             variant="contained"
             component="label"
