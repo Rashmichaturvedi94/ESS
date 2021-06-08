@@ -31,7 +31,7 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box display="flex" flexDirection="column" gridRowGap={20}>
+      <Box display="flex" flexDirection="column" gridRowGap={20} style={{ margin: '0px 220px'}}>
         {errors?.detail && (
           <FormHelperText error>{errors?.detail}</FormHelperText>
         )}
