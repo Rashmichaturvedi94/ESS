@@ -13,8 +13,8 @@ export const Subscription: FC = () => {
   return (
     <SubContainer>
       <Box flex={1} display="flex" alignItems="center" justifyContent="center">
-        <Box width="40%" height="60%"  border={5}>
-          <h1>IMG BOX</h1>
+        <Box width="40%" height="60%" >
+          <img src="https://blog.wildix.com/wp-content/uploads/2020/06/react-logo.jpg" style={{ height: 400, width: 550, overflow: 'hidden'}} alt='text'/>
           {/* <Image src=
             'https://marvel-b1-cdn.bc0a.com/f00000000156946/www.jrebel.com/sites/rebel/files/image/2020-05/image-blog-revel-top-java-tools.jpg'
             roundedCircle/>; */}
