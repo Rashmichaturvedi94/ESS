@@ -29,7 +29,7 @@ const validationSchema: Yup.SchemaOf<CourseFormValues> = Yup.object().shape({
 });
 
 export const CourseForm: FC<CourseFormProps> = (props) => {
-  const { errors, values, handleChange, handleSubmit } = useForm({
+  const { errors, values, handleChange, handleSubmit, setFieldValue } = useForm({
     initialValues,
     validationSchema,
     ...props,
@@ -110,8 +110,11 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
               hidden
               name="img"
               id="img"
-              onChange={handleChange}
-
+              onChange={(event) => {
+                setFieldValue("img", 
+                // @ts-ignore
+                event.currentTarget.files[0]);
+              }}
             />
         </Button>
         <Button type="submit" variant="contained" fullWidth>
