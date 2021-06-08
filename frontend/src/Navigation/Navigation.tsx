@@ -17,6 +17,7 @@ import { AuthRoute } from '../components/AuthRoot';
 import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
 import { Profile } from '../containers/Profile';
+import { Course } from '../containers/Course';
 
 export const Navigation: FC = () => (
     <NavigationComponent>
@@ -32,6 +33,9 @@ export const Navigation: FC = () => (
               </Link>
             </Box>
             <Box alignItems="center" display="flex" gridColumnGap={10}>
+            <Link to={appPaths.createCourse}>
+                <HomeLink>Publish</HomeLink>
+              </Link>
               <Link to={paths.app}>
                 <HomeLink>Home</HomeLink>
               </Link>
@@ -61,6 +65,10 @@ export const Navigation: FC = () => (
              <AuthRoute
               path={appPaths.user}
               component={Profile}
+            />
+            <AuthRoute
+            path={appPaths.createCourse}
+            component={Course}
             />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>

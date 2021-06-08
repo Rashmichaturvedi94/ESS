@@ -73,11 +73,13 @@ export interface RefreshTokenResponse {
 }
 
 export interface Course {
-  id: number;
+  id?: number;
   title: string;
   description: string;
+  duration?: number;
   price: number;
   created_by: number;
+  img?: File;
 }
 
 export type CoursesResponse = Course[];
