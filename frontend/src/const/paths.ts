@@ -9,4 +9,5 @@ export const paths = {
 export const appPaths = {
   user: `${paths.app}/user`,
   searchCourse: `${paths.app}/search`,
+  createCourse: `${paths.app}/course`,
 };

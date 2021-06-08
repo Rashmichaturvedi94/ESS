@@ -12,6 +12,7 @@ import {
   UsersParams,
   UsersResponse,
   UserPayload,
+  Course,
   
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
@@ -76,6 +77,24 @@ export const useUpdateUserEmail = () =>
         onSuccess: (user) =>
           new Promise<LoginResponse>(() => {
             console.log(user);
+          }).then((data)=> {
+            console.log(data);
+          }),
+      },
+    );
+
+export const usePostCourse = () =>
+    useMutation<Course, ApiError<Course>, QueryParams<Course>>(
+      createMutationFn({
+        url: getEndpoint(QueryKeys.courses),
+        method: 'POST',
+        multipart: true,
+      }),
+      {
+        mutationKey: QueryKeys.courses,
+        onSuccess: (course) =>
+          new Promise<Course>(() => {
+            console.log(course);
           }).then((data)=> {
             console.log(data);
           }),
