@@ -71,6 +71,7 @@ export const Navigation: FC = () => (
             />
             <AuthRoute
               path={appPaths.createCourse}
+              exact
               component={Course}
             />
             <AuthRoute 
@@ -83,6 +84,7 @@ export const Navigation: FC = () => (
             />
             <AuthRoute
               path={appPaths.courseDetail}
+              exact
               component={CourseDetailSubscribe}
             />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
