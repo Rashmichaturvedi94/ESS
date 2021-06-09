@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Box, Button, FormHelperText } from "@material-ui/core";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
 
 import {
   SubFormValues,
@@ -37,18 +38,18 @@ export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
         <TitleLabel>Course Title</TitleLabel>
         <DescLabel>This is small course details for the payment page</DescLabel>
         <PriceContainer>
-          {/* <PaymentIcon
-            id="visa"
-            style={{ margin: 5, width: 50 }}
-            className="payment-icon"
-          /> */}
+          <CreditCardIcon style={{ fontSize: 40 }} />
           <DescLabel>Price</DescLabel>
 
           <DescLabel>$29.99</DescLabel>
         </PriceContainer>
         <PaymentSelector>Choose Payment method</PaymentSelector>
         <ButtonContainer>
-          <Button type="submit" variant="contained" style={{ background: "grey", marginLeft: 10 }}>
+          <Button
+            type="submit"
+            variant="contained"
+            style={{ background: "grey", marginLeft: 10 }}
+          >
             Pay by Card
           </Button>
           <Button
