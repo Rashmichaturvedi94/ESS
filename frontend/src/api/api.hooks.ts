@@ -4,6 +4,8 @@ import {
   AccessError,
   AccessToken,
   ApiError,
+  CourseParams,
+  CourseResponce,
   CoursesResponse,
   LoginPayload,
   LoginResponse,
@@ -12,6 +14,7 @@ import {
   UsersParams,
   UsersResponse,
   UserPayload,
+  Course,
   
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
@@ -73,11 +76,28 @@ export const useUpdateUserEmail = () =>
       }),
       {
         mutationKey: QueryKeys.user,
-        onSuccess: (user) =>
-          new Promise<LoginResponse>(() => {
-            console.log(user);
-          }).then((data)=> {
-            console.log(data);
-          }),
+        onSuccess: () =>{},
+      }
+    );
+
+export const usePostCourse = () =>
+    useMutation<Course, ApiError<Course>, QueryParams<Course>>(
+      createMutationFn({
+        url: getEndpoint(QueryKeys.courses),
+        method: 'POST',
+        multipart: true,
+      }),
+      {
+        mutationKey: QueryKeys.courses,
+        onSuccess: () =>{}
       },
     );
+
+export const useCourse = (params: CourseParams) =>
+    useQuery<CourseResponce>({
+      queryFn: createQueryFn({
+        url: getEndpoint(QueryKeys.course),
+      }),
+      queryKey: [QueryKeys.course, params],
+    });
+

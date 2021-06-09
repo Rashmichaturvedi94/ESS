@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
 import { Box, FormHelperText } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
 import * as Yup from 'yup';
 import { LoginFormValues, LoginFormProps } from './LoginForm.interface';
-import { UsernameField, PasswordField } from './LoginForm.styles';
+import { UsernameField, PasswordField, LoginButton } from './LoginForm.styles';
 import { useForm } from '../../hooks/useForm';
 
 const initialValues: LoginFormValues = {
@@ -25,12 +24,11 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box display="flex" flexDirection="column" gridRowGap={20}>
+      <Box display="flex" flexDirection="column" gridRowGap={20} alignItems="center">
         {errors?.detail && (
           <FormHelperText error>{errors?.detail}</FormHelperText>
         )}
         <UsernameField
-          fullWidth
           name="username"
           placeholder='Username'
           error={!!errors.username}
@@ -39,7 +37,6 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
           onChange={handleChange}
         />
         <PasswordField
-          fullWidth
           name="password"
           type="password"
           placeholder='Password'
@@ -48,9 +45,9 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
           value={values.password}
           onChange={handleChange}
         />
-        <Button type="submit" variant="contained" fullWidth>
+        <LoginButton type="submit" variant="contained">
           Sign In
-        </Button>
+        </LoginButton>
       </Box>
     </form>
   );

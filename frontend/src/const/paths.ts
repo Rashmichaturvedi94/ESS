@@ -10,4 +10,6 @@ export const appPaths = {
   user: `${paths.app}/user`,
   searchCourse: `${paths.app}/search`,
   subscribeCourse: `${paths.app}/subscribe`,
+  createCourse: `${paths.app}/course`,
+  courseDetail: `${paths.app}/course/:courseId`,
 };
