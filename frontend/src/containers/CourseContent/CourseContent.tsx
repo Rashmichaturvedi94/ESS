@@ -1,26 +1,14 @@
 import ReactPlayer from 'react-player';
 import React, { FC, useState } from 'react';
-import { BrowserRouter as Router,  Route, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, useParams } from 'react-router-dom';
 import { Box, GridList, Typography, GridListTile, Divider, Button } from '@material-ui/core';
 import { CourseContentProps } from './CourseContent.interface';
-import { useCourse, useCourseContent } from '../../api';
-import { CourseParams, ContentParams, CourseContents } from '../../api/api.interface';
+import { useCourse } from '../../api';
+import { CourseParams, CourseContents } from '../../api/api.interface';
 import {
   CourseContent as CourseContentComponent
 } from './CourseContent.styles';
 
-function CurrentContent() {
-  const  {contentId}  = useParams<ContentParams>();
-  const content = useCourseContent({ contentId });
-    console.log(content);
-    return (
-      <Box>
-        <Typography variant="h3" component="h2" align='center'>
-          {/* <img src={content.url} style={{ height: 110, width:110, overflow: 'hidden' }} alt={content.title}/> */}
-        </Typography>
-      </Box>
-    );
-};
 
 export const CourseContent: FC<CourseContentProps> = () => {
 
@@ -40,9 +28,6 @@ export const CourseContent: FC<CourseContentProps> = () => {
                 You are watching 
               </Typography> 
            </Box>
-           <Route path='/:currentContent'>
-                <CurrentContent />
-          </Route>
           <ReactPlayer url={currentVideo} />
           </Box>
           <Divider orientation="vertical" style={{color: 'black', width: 5}}/>

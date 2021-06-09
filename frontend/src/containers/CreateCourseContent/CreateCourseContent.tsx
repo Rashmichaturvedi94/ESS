@@ -9,24 +9,25 @@ import { CourseParams } from '../../api/api.interface';
 
 export const CreateCourseContent: FC<CreateCourseContentProps> = () => {  
   const { mutate } = usePostCourseContent();
-  const  courseId  = useParams<CourseParams>() as number;
+  const  { courseId } = useParams<CourseParams>();
+  console.log(courseId);
   
-        return (
-        <CreateCourseContentComponent>
-        <Box flex={1} display="flex" alignItems="center" justifyContent="center">
+  return (
+    <CreateCourseContentComponent>
+      <Box flex={1} display="flex" alignItems="center" justifyContent="center">
         <Box display="flex" flexDirection="column" width={320} gridRowGap={20}>
         <div/>
         </Box>
           <Box width="30%" >
-          <CreateCourseContentForm
-            onSubmit={(data) => {
-                mutate({ data, params: {course: courseId} });
-            }
-            }
-          />
-          
-            </Box>
-      </Box>
+            <CreateCourseContentForm
+              onSubmit={(data) => {
+                const payload = data;
+                payload.course = (courseId ?? '1') as unknown as number;
+                mutate({ data: payload });
+              }}
+            />
+          </Box>
+        </Box>
       </CreateCourseContentComponent>
       );
     };

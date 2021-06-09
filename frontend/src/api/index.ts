@@ -10,7 +10,6 @@ export {
   usePostSubscription,
   useSubscriptions,
   useCourseContents,
-  useCourseContent,
   usePostCourseContent,
 } from "./api.hooks";
 

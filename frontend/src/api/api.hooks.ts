@@ -5,8 +5,6 @@ import {
   AccessToken,
   ApiError,
   CourseParams,
-  ContentParams,
-  ContentResponce,
   CourseResponce,
   CoursesResponse,
   LoginPayload,
@@ -146,11 +144,3 @@ export const useSubscriptions = () =>
       onSuccess: () =>{}
     },
   );
-
-  export const useCourseContent = (params: ContentParams) =>
-  useQuery<ContentResponce>({
-    queryFn: createQueryFn({
-      url: getEndpoint(QueryKeys.courseContent),
-    }),
-    queryKey: [QueryKeys.courseContent, params],
-  });
