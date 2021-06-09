@@ -1,5 +1,5 @@
 from backend.apps.sub.models import SubModel
-from backend.apps.sub.serializers import SubSerializer
+from backend.apps.sub.serializers import SubSerializer, ReadSubSerializer
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
@@ -13,6 +13,13 @@ class SubViewSet(viewsets.ModelViewSet):
     """
     permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser]
-    queryset = SubModel.objects.all()
-    serializer_class = SubSerializer
+
+    def get_queryset(self):
+        return SubModel.objects.filter(subscriber=self.request.user)
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return ReadSubSerializer
+        else:
+            return SubSerializer
 

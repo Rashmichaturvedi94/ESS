@@ -10,6 +10,7 @@ export const endpoints: Endpoints = {
   register: 'register/',
   courses: 'courses/',
   user: 'users/:userId/',
+  subscriptions: 'subscriptions/'
 };
 
 export const getEndpoint = (key: QueryKeys) => endpoints[key];

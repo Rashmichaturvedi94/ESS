@@ -16,7 +16,8 @@ export enum QueryKeys {
   refreshToken = 'refreshToken',
   register = 'register',
   courses = 'courses',
-  user = 'user'
+  user = 'user',
+  subscriptions = 'subscriptions',
 }
 
 export interface RequestConfig extends AxiosRequestConfig {
@@ -102,3 +103,11 @@ export interface UserPayload {
   groups: string[];
 }
 
+export interface Subscription {
+  id: number;
+  price: number;
+  subscriber: number;
+  course: Course;
+}
+
+export type  SubscriptionsResponse = Subscription[];

@@ -12,7 +12,7 @@ import {
   UsersParams,
   UsersResponse,
   UserPayload,
-  
+  SubscriptionsResponse,
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
 import { getEndpoint } from './api.endpoints';
@@ -81,3 +81,11 @@ export const useUpdateUserEmail = () =>
           }),
       },
     );
+
+export const useSubscriptions = () => 
+      useQuery<SubscriptionsResponse>({
+        queryFn: createQueryFn({
+          url: getEndpoint(QueryKeys.subscriptions),
+        }),
+        queryKey: QueryKeys.subscriptions,
+    });
