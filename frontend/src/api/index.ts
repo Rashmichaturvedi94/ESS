@@ -1,5 +1,13 @@
-export { queryClient } from './api';
+export { queryClient } from "./api";
 
-export { useLogin, useCourses, useCourse, useUser, useUpdateUserEmail, usePostCourse } from './api.hooks';
+export {
+  useLogin,
+  useCourses,
+  useCourse,
+  useUser,
+  useUpdateUserEmail,
+  usePostCourse,
+  usePostSubscription,
+} from "./api.hooks";
 
-export { getIsAuthenticated } from './api.helpers';
+export { getIsAuthenticated } from "./api.helpers";

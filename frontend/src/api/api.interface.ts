@@ -1,5 +1,5 @@
-import { AxiosError, AxiosRequestConfig } from 'axios';
-import { JwtPayload } from 'jwt-decode';
+import { AxiosError, AxiosRequestConfig } from "axios";
+import { JwtPayload } from "jwt-decode";
 
 export interface Storage<T> {
   setItem: (key: string, value: T) => Promise<void | { error?: any }>;
@@ -12,12 +12,13 @@ export type Uri = string;
 export type DateString = string;
 
 export enum QueryKeys {
-  login = 'login',
-  refreshToken = 'refreshToken',
-  register = 'register',
-  courses = 'courses',
-  user = 'user',
-  course = 'course'
+  login = "login",
+  refreshToken = "refreshToken",
+  register = "register",
+  courses = "courses",
+  user = "user",
+  course = "course",
+  subscriptions = "subscriptions",
 }
 
 export interface RequestConfig extends AxiosRequestConfig {
@@ -28,7 +29,7 @@ export interface RequestConfig extends AxiosRequestConfig {
 export type Endpoints = Record<QueryKeys, string>;
 
 export type ApiError<T extends object = {}> = AxiosError<
-  Partial<Record<keyof T | 'detail', string>>
+  Partial<Record<keyof T | "detail", string>>
 >;
 
 export interface QueryParams<
@@ -110,3 +111,11 @@ export interface CourseParams {
 }
 
 export type CourseResponce = Course;
+
+export interface SubscriptionPayload {
+  id?: number;
+  price: number;
+  subscriber: number;
+  course: number;
+  active: boolean;
+}

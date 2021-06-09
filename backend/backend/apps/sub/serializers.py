@@ -11,5 +11,6 @@ class SubSerializer(ModelSerializer):
       "timestamp",
       "updated",
       "subscriber",
-      "course"
+      "course",
+      "active",
     ]
