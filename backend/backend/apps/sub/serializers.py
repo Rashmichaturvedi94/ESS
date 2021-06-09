@@ -13,6 +13,7 @@ class SubSerializer(ModelSerializer):
       "updated",
       "subscriber",
       "course",
+      "active",
     ]
 
 class ReadSubSerializer(ModelSerializer):
@@ -27,4 +28,5 @@ class ReadSubSerializer(ModelSerializer):
       "updated",
       "subscriber",
       "course",
+      "active",
     ]

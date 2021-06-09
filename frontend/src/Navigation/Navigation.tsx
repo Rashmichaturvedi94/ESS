@@ -18,6 +18,9 @@ import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
 import { MyCourses } from '../containers/MyCourses';
 import { Profile } from '../containers/Profile';
+import { Course } from '../containers/Course';
+import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
+import { Subscription } from '../containers/Subscription';
 
 export const Navigation: FC = () => (
     <NavigationComponent>
@@ -33,11 +36,13 @@ export const Navigation: FC = () => (
               </Link>
             </Box>
             <Box alignItems="center" display="flex" gridColumnGap={10}>
-              <Link to={paths.app}>
+            <Link to={paths.app}>
                 <HomeLink>Home</HomeLink>
               </Link>
               <Link to={appPaths.myCourses}>
                 <HomeLink>My Courses</HomeLink>
+              <Link to={appPaths.createCourse}>
+                <HomeLink>Publish</HomeLink>
               </Link>
               <Link to={appPaths.user}>
                 <MyAvatar />
@@ -71,6 +76,20 @@ export const Navigation: FC = () => (
               component={MyCourses}
             />
             
+              path={appPaths.createCourse}
+              exact
+              component={Course}
+            />
+            <AuthRoute
+              path={appPaths.courseDetail}
+              exact
+              component={CourseDetailSubscribe}
+            />
+              <AuthRoute
+              path={appPaths.subscribeCourse}
+              exact
+              component={Subscription}
+            />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>
         </Box>

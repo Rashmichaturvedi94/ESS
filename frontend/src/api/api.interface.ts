@@ -1,5 +1,5 @@
-import { AxiosError, AxiosRequestConfig } from 'axios';
-import { JwtPayload } from 'jwt-decode';
+import { AxiosError, AxiosRequestConfig } from "axios";
+import { JwtPayload } from "jwt-decode";
 
 export interface Storage<T> {
   setItem: (key: string, value: T) => Promise<void | { error?: any }>;
@@ -12,12 +12,13 @@ export type Uri = string;
 export type DateString = string;
 
 export enum QueryKeys {
-  login = 'login',
-  refreshToken = 'refreshToken',
-  register = 'register',
-  courses = 'courses',
-  user = 'user',
-  subscriptions = 'subscriptions',
+  login = "login",
+  refreshToken = "refreshToken",
+  register = "register",
+  courses = "courses",
+  user = "user",
+  course = "course",
+  subscriptions = "subscriptions",
 }
 
 export interface RequestConfig extends AxiosRequestConfig {
@@ -28,7 +29,7 @@ export interface RequestConfig extends AxiosRequestConfig {
 export type Endpoints = Record<QueryKeys, string>;
 
 export type ApiError<T extends object = {}> = AxiosError<
-  Partial<Record<keyof T | 'detail', string>>
+  Partial<Record<keyof T | "detail", string>>
 >;
 
 export interface QueryParams<
@@ -74,11 +75,13 @@ export interface RefreshTokenResponse {
 }
 
 export interface Course {
-  id: number;
+  id?: number;
   title: string;
   description: string;
+  duration?: number;
   price: number;
   created_by: number;
+  img?: File;
 }
 
 export type CoursesResponse = Course[];
@@ -111,3 +114,16 @@ export interface Subscription {
 }
 
 export type  SubscriptionsResponse = Subscription[];
+export interface CourseParams {
+  courseId?: string;
+}
+
+export type CourseResponce = Course;
+
+export interface SubscriptionPayload {
+  id?: number;
+  price: number;
+  subscriber: number;
+  course: number;
+  active: boolean;
+}
