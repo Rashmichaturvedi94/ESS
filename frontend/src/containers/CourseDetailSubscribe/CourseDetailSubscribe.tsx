@@ -17,13 +17,14 @@ import {
 } from "./CourseDetailSubscribe.styles";
 import { CourseDetailSubscribeProps } from "./CourseDetailSubscribe.interface";
 import { useCourse } from "../../api";
-import { CourseParams } from "../../api/api.interface";
+import { Course, CourseParams } from "../../api/api.interface";
 import { appPaths } from "../../const/paths";
 
 export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
   const history = useHistory();
+  const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : '';
 
   return (
     <CourseDetailSubscribeComponent>
@@ -34,7 +35,7 @@ export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
         </Box>
         <Box style={{ marginLeft: 40, marginRight: 110 }}>
           <img
-            src="https://blog.wildix.com/wp-content/uploads/2020/06/react-logo.jpg"
+            src={getImage(course.data)}
             style={{ height: 450, width: 600, overflow: "hidden" }}
             alt={course.data?.title}
           />
