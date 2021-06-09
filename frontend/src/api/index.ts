@@ -10,6 +10,8 @@ export {
   usePostSubscription,
   useSubscriptions,
   useCourseContents,
+  useCourseContent,
+  usePostCourseContent,
 } from "./api.hooks";
 
 export { getIsAuthenticated, getUrlWithParams } from "./api.helpers";

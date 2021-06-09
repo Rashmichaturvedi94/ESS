@@ -88,13 +88,13 @@ export interface Course {
 }
 
 export interface CourseContents {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   course: number;
-  position: number;
-  file: File;
-  url: string;
+  position?: number;
+  img?: File;
+  url?: string;
   created_by: number;
 }
 
@@ -132,7 +132,13 @@ export interface CourseParams {
   courseId?: string;
 }
 
+export interface ContentParams {
+  contentId?: string;
+}
+
 export type CourseResponce = Course;
+
+export type ContentResponce = CourseContents;
 
 export type CourseContentsResponse = CourseContents[];
 

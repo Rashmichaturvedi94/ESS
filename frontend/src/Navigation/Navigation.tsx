@@ -88,6 +88,10 @@ export const Navigation: FC = () => (
               component={CourseContent} 
             />
             <AuthRoute 
+              path={appPaths.courseContentPlay} 
+              component={CourseContent} 
+            />
+            <AuthRoute 
               path={appPaths.createCourseContent} 
               component={CreateCourseContent} 
             />
