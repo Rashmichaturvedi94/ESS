@@ -1,3 +1,6 @@
 .env
+.vs
+env
+.vscode
 postgres-data
 .DS_Store

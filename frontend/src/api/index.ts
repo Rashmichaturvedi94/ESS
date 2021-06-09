@@ -8,6 +8,7 @@ export {
   useUpdateUserEmail,
   usePostCourse,
   usePostSubscription,
+  useSubscriptions,
 } from "./api.hooks";
 
 export { getIsAuthenticated } from "./api.helpers";

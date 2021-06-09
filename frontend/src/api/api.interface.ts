@@ -106,6 +106,14 @@ export interface UserPayload {
   groups: string[];
 }
 
+export interface Subscription {
+  id: number;
+  price: number;
+  subscriber: number;
+  course: Course;
+}
+
+export type  SubscriptionsResponse = Subscription[];
 export interface CourseParams {
   courseId?: string;
 }

@@ -16,6 +16,7 @@ import {
 import { AuthRoute } from '../components/AuthRoot';
 import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
+import { MyCourses } from '../containers/MyCourses';
 import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
 import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
@@ -37,6 +38,9 @@ export const Navigation: FC = () => (
             <Box alignItems="center" display="flex" gridColumnGap={10}>
             <Link to={paths.app}>
                 <HomeLink>Home</HomeLink>
+              </Link>
+              <Link to={appPaths.myCourses}>
+                <HomeLink>My Courses</HomeLink>
               </Link>
               <Link to={appPaths.createCourse}>
                 <HomeLink>Publish</HomeLink>
@@ -67,6 +71,10 @@ export const Navigation: FC = () => (
              <AuthRoute
               path={appPaths.user}
               component={Profile}
+            />
+            <AuthRoute
+              path={appPaths.myCourses}
+              component={MyCourses}
             />
             <AuthRoute
               path={appPaths.createCourse}

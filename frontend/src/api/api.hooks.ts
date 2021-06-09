@@ -14,6 +14,7 @@ import {
   UsersParams,
   UsersResponse,
   UserPayload,
+  SubscriptionsResponse,
   Course,
   SubscriptionPayload,
   
@@ -114,3 +115,11 @@ export const useCourse = (params: CourseParams) =>
         onSuccess: () =>{}
       },
     );
+
+export const useSubscriptions = () => 
+      useQuery<SubscriptionsResponse>({
+        queryFn: createQueryFn({
+          url: getEndpoint(QueryKeys.subscriptions),
+        }),
+        queryKey: QueryKeys.subscriptions,
+    });
