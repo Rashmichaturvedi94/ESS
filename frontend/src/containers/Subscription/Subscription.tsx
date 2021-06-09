@@ -30,14 +30,14 @@ export const Subscription: FC = () => {
           description: course.data?.description ?? "tttt",
           price: course.data?.price ?? 10,
           course: course.data?.id ?? 0,
-          subscriber: course.data?.id ?? 0,
+          subscriber: getUserIdFromLocalStorage() ?? 0,
           active: true,
         }}
         onSubmit={(data) => {
           mutate({
             data,
             params: {
-              price: course.data?.description,
+              price: course.data?.price,
               course: course.data?.id,
               subscriber: getUserIdFromLocalStorage(),
               active: true,
