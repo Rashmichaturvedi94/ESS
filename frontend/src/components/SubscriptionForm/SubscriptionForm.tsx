@@ -12,18 +12,20 @@ import {
   PriceContainer,
   PaymentSelector,
   ButtonContainer,
+  PriceLabel,
 } from "./SubscriptionForm.styles";
 import { useForm } from "../../hooks/useForm";
 
 const initialValues: SubFormValues = {
-  title: "",
-  description: "",
-  price: "",
-  method: "",
+  title: "test",
+  description: "test",
+  price: 0,
+  course: 0,
+  subscriber: 0,
 };
 
 export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
-  const { errors, handleSubmit } = useForm({
+  const { errors, values, handleSubmit } = useForm({
     initialValues,
     ...props,
   });
@@ -35,13 +37,12 @@ export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
           <FormHelperText error>{errors?.detail}</FormHelperText>
         )}
 
-        <TitleLabel>Course Title</TitleLabel>
-        <DescLabel>This is small course details for the payment page</DescLabel>
+        <TitleLabel>{values.title}</TitleLabel>
+        <DescLabel>{values.description}</DescLabel>
         <PriceContainer>
           <CreditCardIcon style={{ fontSize: 40 }} />
-          <DescLabel>Price</DescLabel>
-
-          <DescLabel>$29.99</DescLabel>
+          <PriceLabel>Price:</PriceLabel>
+          <PriceLabel>${values.price}</PriceLabel>
         </PriceContainer>
         <PaymentSelector>Choose Payment method</PaymentSelector>
         <ButtonContainer>

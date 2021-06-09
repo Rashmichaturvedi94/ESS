@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { InputLabel } from "@material-ui/core";
+import { InputLabel, Typography } from "@material-ui/core";
 
 export const PriceContainer = styled.div`
   margin-top: 50px;
@@ -17,16 +17,21 @@ export const ButtonContainer = styled.div`
   justify-content: left;
 `;
 
-export const TitleLabel = styled(InputLabel)` 
+export const TitleLabel = styled(Typography)`
   font-size: x-large;
   font-weight: bold;
   margin-top: 50px;
 `;
-export const DescLabel = styled(InputLabel)` 
+export const DescLabel = styled(InputLabel)`
   font-size: medium;
 `;
 
-export const PaymentSelector = styled(InputLabel)` 
+export const PaymentSelector = styled(InputLabel)`
   font-size: medium;
   margin-top: 40px;
+`;
+
+export const PriceLabel = styled(InputLabel)`
+  font-size: medium;
+  margin-top: 10px;
 `;

@@ -19,6 +19,7 @@ import { SearchCourse } from '../containers/SearchCourse';
 import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
 import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
+import { Subscription } from '../containers/Subscription';
 
 export const Navigation: FC = () => (
     <NavigationComponent>
@@ -76,6 +77,11 @@ export const Navigation: FC = () => (
               path={appPaths.courseDetail}
               exact
               component={CourseDetailSubscribe}
+            />
+              <AuthRoute
+              path={appPaths.subscribeCourse}
+              exact
+              component={Subscription}
             />
             <Redirect from={paths.app} to={appPaths.searchCourse} />
           </Switch>

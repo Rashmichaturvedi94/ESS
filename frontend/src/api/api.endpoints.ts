@@ -11,6 +11,9 @@ export const endpoints: Endpoints = {
   courses: 'courses/',
   user: 'users/:userId/',
   course: 'courses/:courseId/',
+  subscriptions: 'subscriptions/',
 };
+
+
 
 export const getEndpoint = (key: QueryKeys) => endpoints[key];

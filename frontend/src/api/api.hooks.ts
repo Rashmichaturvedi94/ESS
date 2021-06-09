@@ -15,6 +15,7 @@ import {
   UsersResponse,
   UserPayload,
   Course,
+  SubscriptionPayload,
   
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
@@ -101,3 +102,15 @@ export const useCourse = (params: CourseParams) =>
       queryKey: [QueryKeys.course, params],
     });
 
+ export const usePostSubscription = () =>
+    useMutation<SubscriptionPayload, ApiError<SubscriptionPayload>, QueryParams<SubscriptionPayload>>(
+      createMutationFn({
+        url: getEndpoint(QueryKeys.subscriptions),
+        method: 'POST',
+        multipart: true,
+      }),
+      {
+        mutationKey: QueryKeys.subscriptions,
+        onSuccess: () =>{}
+      },
+    );
