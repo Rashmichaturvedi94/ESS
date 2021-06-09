@@ -35,11 +35,11 @@ export const Navigation: FC = () => (
               </Link>
             </Box>
             <Box alignItems="center" display="flex" gridColumnGap={10}>
-            <Link to={appPaths.createCourse}>
-                <HomeLink>Publish</HomeLink>
-              </Link>
-              <Link to={paths.app}>
+            <Link to={paths.app}>
                 <HomeLink>Home</HomeLink>
+              </Link>
+              <Link to={appPaths.createCourse}>
+                <HomeLink>Publish</HomeLink>
               </Link>
               <Link to={appPaths.user}>
                 <MyAvatar />
