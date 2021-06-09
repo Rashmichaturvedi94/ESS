@@ -7,16 +7,18 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ShareIcon from '@material-ui/icons/Share';
-import { useParams } from 'react-router-dom';
+import { useParams,useHistory, generatePath } from 'react-router-dom';
 import { CourseDetailSubscribe as CourseDetailSubscribeComponent, AuthorText, CourseText, DetailText, ButtonText } from './CourseDetailSubscribe.styles';
 import { CourseDetailSubscribeProps } from './CourseDetailSubscribe.interface';
 import { useCourse } from '../../api';
 import { CourseParams } from '../../api/api.interface';
+import { appPaths } from '../../const/paths';
 
 
 export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
+  const history = useHistory();
 
   return ( 
     <CourseDetailSubscribeComponent>
@@ -57,6 +59,13 @@ export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
           <ButtonText
              fullWidth
               variant="text"
+              onClick={() =>
+                history.push(
+                  generatePath(appPaths.subscribeCourse, {
+                    courseId: course.data?.id,
+                  })
+                )
+              }
           >
             <AddShoppingCartIcon style={{fontSize: 35}}/> 
            Subscribe

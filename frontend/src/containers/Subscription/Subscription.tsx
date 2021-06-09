@@ -1,16 +1,16 @@
 import React, { FC } from "react";
 import { Box } from "@material-ui/core";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { SubContainer } from "./Subscription.styles";
 import { useCourse, usePostSubscription } from "../../api";
 import { SubscriptionForm } from "../../components/SubscriptionForm";
 import { getUserIdFromLocalStorage } from "../../api/api.helpers";
 
-// import { CourseParams } from "../../api/api.interface";
+import { CourseParams } from "../../api/api.interface";
 
 export const Subscription: FC = () => {
-  // const { courseId } = useParams<CourseParams>();
-  const courseId = "1";
+  const { courseId } = useParams<CourseParams>();
+  // const courseId = "1";
   const course = useCourse({ courseId });
   const { mutate } = usePostSubscription();
   return (
@@ -39,7 +39,7 @@ export const Subscription: FC = () => {
             params: {
               price: course.data?.description,
               course: course.data?.id,
-              subscriber:  getUserIdFromLocalStorage(),
+              subscriber: getUserIdFromLocalStorage(),
             },
           });
         }}
