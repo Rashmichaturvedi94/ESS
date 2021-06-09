@@ -13,6 +13,9 @@ export const endpoints: Endpoints = {
   course: 'courses/:courseId/',
   courseContents: 'courseContents/',
   courseContent: 'courseContents/:courseId',
+  subscriptions: 'subscriptions/',
 };
+
+
 
 export const getEndpoint = (key: QueryKeys) => endpoints[key];

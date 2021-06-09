@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextField } from '@material-ui/core';
+import { FormControlLabel, TextField } from '@material-ui/core';
 
 export const Register = styled.div`
   flex: 1;
@@ -25,4 +25,8 @@ export const EmailField = styled(TextField)`
 export const PasswordField = styled(TextField)`
   height: 48px;
   margin-bottom: 4px;
+`;
+
+export const RadioField = styled(FormControlLabel)`
+  margin-top: 4px;
 `;

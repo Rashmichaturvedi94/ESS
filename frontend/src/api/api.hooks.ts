@@ -14,8 +14,10 @@ import {
   UsersParams,
   UsersResponse,
   UserPayload,
+  SubscriptionsResponse,
   Course,
   CourseContentsResponse,
+  SubscriptionPayload,
   
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
@@ -109,3 +111,23 @@ export const useCourse = (params: CourseParams) =>
     }),
     queryKey: QueryKeys.courseContents,
   });
+ export const usePostSubscription = () =>
+    useMutation<SubscriptionPayload, ApiError<SubscriptionPayload>, QueryParams<SubscriptionPayload>>(
+      createMutationFn({
+        url: getEndpoint(QueryKeys.subscriptions),
+        method: 'POST',
+        multipart: true,
+      }),
+      {
+        mutationKey: QueryKeys.subscriptions,
+        onSuccess: () =>{}
+      },
+    );
+
+export const useSubscriptions = () => 
+      useQuery<SubscriptionsResponse>({
+        queryFn: createQueryFn({
+          url: getEndpoint(QueryKeys.subscriptions),
+        }),
+        queryKey: QueryKeys.subscriptions,
+    });
