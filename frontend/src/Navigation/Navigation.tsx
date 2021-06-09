@@ -41,6 +41,7 @@ export const Navigation: FC = () => (
               </Link>
               <Link to={appPaths.myCourses}>
                 <HomeLink>My Courses</HomeLink>
+              </Link>
               <Link to={appPaths.createCourse}>
                 <HomeLink>Publish</HomeLink>
               </Link>
@@ -75,7 +76,7 @@ export const Navigation: FC = () => (
               path={appPaths.myCourses}
               component={MyCourses}
             />
-            
+            <AuthRoute
               path={appPaths.createCourse}
               exact
               component={Course}
