@@ -5,6 +5,7 @@ from django.urls import path, include
 from rest_framework import routers
 from backend.apps.api.views import UserViewSet, EssTokenObtainPairView
 from backend.apps.course.views import CourseViewSet
+from backend.apps.course.views import CourseContentsViewSet
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularSwaggerView,
@@ -17,6 +18,7 @@ from rest_framework_simplejwt.views import (
 router = routers.SimpleRouter()
 router.register("users", UserViewSet)
 router.register("courses", CourseViewSet, basename="courses")
+router.register("courseContents", CourseContentsViewSet, basename="courseContents")
 router.register("subscriptions",SubViewSet,basename="subscriptions")
 
 urlpatterns = router.urls

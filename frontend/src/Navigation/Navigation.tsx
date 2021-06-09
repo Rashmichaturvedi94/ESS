@@ -7,19 +7,21 @@ import {
   Divider,
 } from '@material-ui/core';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
+import { AuthRoute } from '../components/AuthRoot';
 import {
   Navigation as NavigationComponent,
   MyAvatar,
   Title,
   HomeLink,
 } from './Navigation.styles';
-import { AuthRoute } from '../components/AuthRoot';
 import { appPaths, paths } from '../const/paths';
 import { SearchCourse } from '../containers/SearchCourse';
 import { MyCourses } from '../containers/MyCourses';
 import { Profile } from '../containers/Profile';
 import { Course } from '../containers/Course';
 import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
+import { CreateCourseContent } from '../containers/CreateCourseContent';
+import { CourseContent } from '../containers/CourseContent';
 import { Subscription } from '../containers/Subscription';
 
 export const Navigation: FC = () => (
@@ -28,7 +30,7 @@ export const Navigation: FC = () => (
         <Toolbar style={{ backgroundColor: 'black' }}>
           <Box flex={1} display="flex">
             <Box display="flex" flex={1}>
-              <Link to={paths.app}>
+              <Link to={appPaths.searchCourse}>
                 <Box display="flex" flexDirection="row" flex={1}>
                   <ImportContactsIcon style={{ color: 'white', fontSize: 44 }} />
                   <Title>Genious</Title>
@@ -80,6 +82,18 @@ export const Navigation: FC = () => (
               path={appPaths.createCourse}
               exact
               component={Course}
+            />
+            <AuthRoute 
+              path={appPaths.courseContent} 
+              component={CourseContent} 
+            />
+            <AuthRoute 
+              path={appPaths.courseContentPlay} 
+              component={CourseContent} 
+            />
+            <AuthRoute 
+              path={appPaths.createCourseContent} 
+              component={CreateCourseContent} 
             />
             <AuthRoute
               path={appPaths.courseDetail}

@@ -13,4 +13,7 @@ export const appPaths = {
   subscribeCourse: `${paths.app}/subscribe/:courseId`,
   createCourse: `${paths.app}/course`,
   courseDetail: `${paths.app}/course/:courseId`,
+  createCourseContent: `${paths.app}/course/:courseId/createCourseContent`,
+  courseContent: `${paths.app}/course/:courseId/courseContent`,
+  courseContentPlay: `${paths.app}/course/:courseId/courseContent/:contentId`,
 };

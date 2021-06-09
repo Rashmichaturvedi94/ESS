@@ -1,7 +1,7 @@
 
 import React, { FC } from 'react';
+import { useHistory, generatePath  } from 'react-router-dom';
 import { GridList, Typography, GridListTile } from '@material-ui/core';
-import { useHistory, generatePath } from 'react-router-dom';
 import { SearchCourseProps } from './SearchCourse.interface';
 import { useCourses } from '../../api';
 import { appPaths } from '../../const/paths';

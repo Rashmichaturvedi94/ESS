@@ -11,6 +11,8 @@ export const endpoints: Endpoints = {
   courses: 'courses/',
   user: 'users/:userId/',
   course: 'courses/:courseId/',
+  courseContents: 'courseContents/',
+  courseContent: 'courseContents/:courseId',
   subscriptions: 'subscriptions/',
 };
 

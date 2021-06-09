@@ -18,6 +18,8 @@ export enum QueryKeys {
   courses = "courses",
   user = "user",
   course = "course",
+  courseContents = "courseContents",
+  courseContent = "courseContent",
   subscriptions = "subscriptions",
 }
 
@@ -82,6 +84,18 @@ export interface Course {
   price: number;
   created_by: number;
   img?: File;
+  contents?: CourseContents[];
+}
+
+export interface CourseContents {
+  id?: number;
+  title: string;
+  description: string;
+  course: number;
+  position?: number;
+  img?: File;
+  url?: string;
+  created_by: number;
 }
 
 export type CoursesResponse = Course[];
@@ -113,13 +127,24 @@ export interface Subscription {
   course: Course;
 }
 
-export type  SubscriptionsResponse = Subscription[];
+export type SubscriptionsResponse = Subscription[];
 export interface CourseParams {
   courseId?: string;
 }
 
+export interface ContentParams {
+  contentId?: string;
+}
+
 export type CourseResponce = Course;
 
+export type ContentResponce = CourseContents;
+
+export type CourseContentsResponse = CourseContents[];
+
+export interface CourseContentParams {
+  courseId?: string;
+}
 export interface SubscriptionPayload {
   id?: number;
   price: number;
