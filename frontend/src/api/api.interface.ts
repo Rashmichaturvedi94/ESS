@@ -117,4 +117,5 @@ export interface SubscriptionPayload {
   price: number;
   subscriber: number;
   course: number;
+  active: boolean;
 }

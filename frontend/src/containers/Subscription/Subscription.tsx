@@ -10,7 +10,6 @@ import { CourseParams } from "../../api/api.interface";
 
 export const Subscription: FC = () => {
   const { courseId } = useParams<CourseParams>();
-  // const courseId = "1";
   const course = useCourse({ courseId });
   const { mutate } = usePostSubscription();
   return (
@@ -32,6 +31,7 @@ export const Subscription: FC = () => {
           price: course.data?.price ?? 10,
           course: course.data?.id ?? 0,
           subscriber: course.data?.id ?? 0,
+          active: true,
         }}
         onSubmit={(data) => {
           mutate({
@@ -40,6 +40,7 @@ export const Subscription: FC = () => {
               price: course.data?.description,
               course: course.data?.id,
               subscriber: getUserIdFromLocalStorage(),
+              active: true,
             },
           });
         }}

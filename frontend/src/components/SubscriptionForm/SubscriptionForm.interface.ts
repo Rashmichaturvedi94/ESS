@@ -6,7 +6,7 @@ export interface SubFormValues {
   price: number;
   course: number;
   subscriber: number;
-
+  active: boolean;
 }
 
 export type SubscriptionFormProps = FormProps<SubFormValues>;

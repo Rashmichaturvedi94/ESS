@@ -22,6 +22,7 @@ const initialValues: SubFormValues = {
   price: 0,
   course: 0,
   subscriber: 0,
+  active: false,
 };
 
 export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {

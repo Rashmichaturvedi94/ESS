@@ -7,4 +7,5 @@ export interface SubFormValues {
   title: string;
   description: string;
   price: number;
+  active: boolean;
 }
