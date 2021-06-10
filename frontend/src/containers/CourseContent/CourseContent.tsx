@@ -9,7 +9,6 @@ import {
   CourseContent as CourseContentComponent, LessonText
 } from './CourseContent.styles';
 
-
 export const CourseContent: FC<CourseContentProps> = () => {
 
   const { courseId } = useParams<CourseParams>();
