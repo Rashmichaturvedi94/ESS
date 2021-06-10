@@ -41,7 +41,7 @@ export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
         <TitleLabel>{values.title}</TitleLabel>
         <DescLabel>{values.description}</DescLabel>
         <PriceContainer>
-          <CreditCardIcon style={{ fontSize: 40 }} />
+          <CreditCardIcon style={{ fontSize: 40, marginLeft: 20 }} />
           <PriceLabel>Price:</PriceLabel>
           <PriceLabel>${values.price}</PriceLabel>
         </PriceContainer>

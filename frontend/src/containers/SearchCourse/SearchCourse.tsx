@@ -17,11 +17,11 @@ export const SearchCourse: FC<SearchCourseProps> = () => {
       {courses.data?.map((course) => (
         <GridListTile 
           key={course.id} 
-          style={{ height: 258, width: 224, border: '2px solid black', margin: 8}} 
+          style={{ height: 258, width: 224, border: '2px solid black', margin: 30, backgroundColor: '#C4C4C4'}} 
           onClick={() => history.push(generatePath(appPaths.courseDetail, { courseId: course.id }))}>
           <img src={getImage(course)} style={{ height: 196, width:220, overflow: 'hidden' }} alt={course.title}/>
           <Typography>{course.title}</Typography>
-          <Typography>{course.description}</Typography>
+          <Typography>${course.price}</Typography>
         </GridListTile>
       ))}
     </GridList>

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, GridList, Typography, GridListTile } from "@material-ui/core";
+import { Box, GridList, Typography, GridListTile, Divider } from "@material-ui/core";
 import { useHistory, generatePath  } from 'react-router-dom';
 import { appPaths } from '../../const/paths';
 import { MyCoursesProps } from "./MyCourses.interface";
@@ -17,6 +17,7 @@ export const MyCourses: FC<MyCoursesProps> = () => {
       <Typography variant="h4" component="h2" align="left">
         Subscribed
       </Typography>
+      <Divider style={{ color: "black", height: 5, marginTop: 30, marginBottom: 30 }} />
       <GridList>
         {subscriptions.data?.map((subscription) => (
           <GridListTile
@@ -26,7 +27,7 @@ export const MyCourses: FC<MyCoursesProps> = () => {
               height: 258,
               width: 224,
               border: "2px solid black",
-              margin: 8,
+              margin: 30,
             }}
           >
             <img

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Box } from '@material-ui/core';
 // import { useHistory } from 'react-router-dom';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import { Profile as ProfileComponent } from './Profile.styles';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import { Profile as ProfileComponent, IconBox } from './Profile.styles';
 import { ProfileProps } from './Profile.interface';
 import { ProfileForm } from '../../components/ProfileForm';
 import { useUser, useUpdateUserEmail } from '../../api';
@@ -16,10 +16,9 @@ export const Profile: FC<ProfileProps> = () => {
 
   return (
   <ProfileComponent><Box flex={1} display="flex" alignItems="center" justifyContent="center">
-    <Box width="30%" height="100%">
-      <AccountCircle style={{ color: 'black', fontSize: 150, marginTop: 120, marginLeft: 80}} />
-     
-      </Box>
+    <IconBox>
+      <PersonOutlineIcon style={{ color: 'black', fontSize: 200}}/>
+    </IconBox>
   <Box display="flex" flexDirection="column" width={320} gridRowGap={20}>
     <ProfileForm
        initialValues={{name: user.data?.username ?? '', username: user.data?.username ?? '', email: user.data?.email ?? '', userId: getUserIdFromLocalStorage()}}

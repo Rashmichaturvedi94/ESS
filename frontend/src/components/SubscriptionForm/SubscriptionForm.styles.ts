@@ -6,7 +6,7 @@ export const PriceContainer = styled.div`
   flex: 2;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 `;
 
 export const ButtonContainer = styled.div`
@@ -15,23 +15,25 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: left;
+  font-size: 40px;
 `;
 
 export const TitleLabel = styled(Typography)`
-  font-size: x-large;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: 700;
   margin-top: 50px;
 `;
 export const DescLabel = styled(InputLabel)`
-  font-size: medium;
+  font-size: 25px;
 `;
 
 export const PaymentSelector = styled(InputLabel)`
-  font-size: medium;
+  font-size: 40px;
   margin-top: 40px;
 `;
 
 export const PriceLabel = styled(InputLabel)`
-  font-size: medium;
+  font-size: 25px;
   margin-top: 10px;
+  margin-left: 20px;
 `;

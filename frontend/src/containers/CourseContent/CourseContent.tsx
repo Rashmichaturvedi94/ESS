@@ -6,7 +6,7 @@ import { CourseContentProps } from './CourseContent.interface';
 import { useCourse } from '../../api';
 import { CourseParams, CourseContents } from '../../api/api.interface';
 import {
-  CourseContent as CourseContentComponent
+  CourseContent as CourseContentComponent, LessonText
 } from './CourseContent.styles';
 
 
@@ -25,7 +25,7 @@ export const CourseContent: FC<CourseContentProps> = () => {
           <Box style={{ margin: 2}} width="50%" height="100%" justifyContent="center">
             <Box style ={{padding: 2}} justifyContent="center"  alignItems="center">
               <Typography variant="h3" component="h2" align='left'>
-                You are watching 
+                {course.data?.title}
               </Typography> 
            </Box>
           <ReactPlayer url={currentVideo} />
@@ -33,7 +33,7 @@ export const CourseContent: FC<CourseContentProps> = () => {
           <Divider orientation="vertical" style={{color: 'black', width: 5}}/>
           <Box display="flex" flexDirection="column" width={600} gridRowGap={10} paddingLeft = '25px'>
            <GridList>
-             <Typography variant="h3" component="h4" align='center'>Lessons</Typography>
+             <LessonText>Lessons</LessonText>
               {course.data?.contents?.map((content) => (
                 <GridListTile key={content.id} style={{ height: 110, width: 560, border: '2px solid black', margin: 2 }}>
                   <Button onClick={() => setCurrentVideo('https://www.youtube.com/watch?v=GvGzFSkSQo4')}>

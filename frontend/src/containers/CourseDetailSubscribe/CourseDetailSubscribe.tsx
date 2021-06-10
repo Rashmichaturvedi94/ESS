@@ -16,22 +16,23 @@ import {
   ButtonText,
 } from "./CourseDetailSubscribe.styles";
 import { CourseDetailSubscribeProps } from "./CourseDetailSubscribe.interface";
-import { useCourse } from "../../api";
+import { useCourse, useUser } from "../../api";
 import { Course, CourseParams } from "../../api/api.interface";
 import { appPaths } from "../../const/paths";
 
 export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
+  const publisher = useUser({ userId: (course.data?.created_by as number) });
   const history = useHistory();
   const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : '';
 
   return (
     <CourseDetailSubscribeComponent>
-      <Box style={{ marginLeft: 50, marginTop: 50 }}>
+      <Box style={{ marginLeft: 50, marginTop: 40 }}>
         <Box flex={1} display="flex" style={{ marginLeft: 450 }}>
-          <PersonPinCircleIcon style={{ fontSize: 30 }} />
-          <AuthorText>Author</AuthorText>
+          <PersonPinCircleIcon style={{ fontSize: 35 }} />
+          <AuthorText>{publisher.data?.username}</AuthorText>
         </Box>
         <Box style={{ marginLeft: 40, marginRight: 110 }}>
           <img
@@ -48,12 +49,12 @@ export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
         <Box flex={1} display="flex" style={{ marginLeft: 100, marginTop: 50 }}>
           <ScheduleIcon style={{ fontSize: 40 }} />
           <DetailText>Duration</DetailText>
-          <DetailText>{course.data?.title}</DetailText>
+          <DetailText>{course.data?.duration}</DetailText>
         </Box>
         <Box flex={1} display="flex" style={{ marginLeft: 100, marginTop: 50 }}>
           <LayersIcon style={{ fontSize: 40 }} />
           <DetailText>Lessons</DetailText>
-          <DetailText>{course.data?.description}</DetailText>
+          <DetailText>{course.data?.contents?.length}</DetailText>
         </Box>
         <Box flex={1} display="flex" style={{ marginLeft: 100, marginTop: 50 }}>
           <PersonOutlineIcon style={{ fontSize: 40 }} />

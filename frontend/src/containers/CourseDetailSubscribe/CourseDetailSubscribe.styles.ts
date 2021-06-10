@@ -8,9 +8,11 @@ export const CourseDetailSubscribe = styled.div`
 `;
 
 export const AuthorText = styled(Typography)`
+  font-size: 25px;
 `;
 
 export const CourseText = styled(Typography)`
+  margin-top: 30px;
   font-size: 40px;
   font-weight: 700;
 `;
