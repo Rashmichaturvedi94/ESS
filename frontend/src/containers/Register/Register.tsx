@@ -6,10 +6,10 @@ import { Register as RegisterComponent } from './Register.styles';
 import { RegisterProps } from './Register.interface';
 import { RegisterForm } from '../../components/RegisterForm';
 import { paths } from '../../const/paths';
-import { useLogin } from '../../api';
+import { useRegister } from '../../api';
 
 export const Register: FC<RegisterProps> = () => {
-  const { error, mutate } = useLogin();
+  const { error, mutate } = useRegister();
   const history = useHistory();
 
   return (

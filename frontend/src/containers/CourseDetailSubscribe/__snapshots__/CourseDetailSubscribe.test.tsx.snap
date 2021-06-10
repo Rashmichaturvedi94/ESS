@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/CourseDetailSubscribe should render 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM bOAqhc"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-1"
+      style="margin-left: 50px; margin-top: 50px;"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2"
+        style="margin-left: 450px;"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          style="font-size: 30px;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 2c1.1 0 2 .9 2 2 0 1.11-.9 2-2 2s-2-.89-2-2c0-1.1.9-2 2-2zm0 10c-1.67 0-3.14-.85-4-2.15.02-1.32 2.67-2.05 4-2.05s3.98.73 4 2.05c-.86 1.3-2.33 2.15-4 2.15z"
+          />
+        </svg>
+        <p
+          class="MuiTypography-root sc-gtsrHT eOAXXw MuiTypography-body1"
+        >
+          Author
+        </p>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-3"
+        style="margin-left: 40px; margin-right: 110px;"
+      >
+        <img
+          src=""
+          style="height: 450px; width: 600px; overflow: hidden;"
+        />
+        <p
+          class="MuiTypography-root sc-dlnjwi FzyQW MuiTypography-body1"
+        />
+        <p
+          class="MuiTypography-root MuiTypography-body1"
+        />
+      </div>
+    </div>
+    <hr
+      class="MuiDivider-root MuiDivider-vertical"
+      style="color: black; width: 5px;"
+    />
+    <div
+      class="MuiBox-root MuiBox-root-4"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-5"
+        style="margin-left: 100px; margin-top: 50px;"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          style="font-size: 40px;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+          />
+          <path
+            d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+          />
+        </svg>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        >
+          Duration
+        </p>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        />
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6"
+        style="margin-left: 100px; margin-top: 50px;"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          style="font-size: 40px;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"
+          />
+        </svg>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        >
+          Lessons
+        </p>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        />
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-7"
+        style="margin-left: 100px; margin-top: 50px;"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          style="font-size: 40px;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"
+          />
+        </svg>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        >
+          Participants
+        </p>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        />
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-8"
+        style="margin-left: 100px; margin-top: 50px;"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root"
+          focusable="false"
+          style="font-size: 40px;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"
+          />
+        </svg>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        >
+          Price
+        </p>
+        <p
+          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+        >
+          $
+        </p>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-9"
+        style="margin-left: 100px; margin-top: 90px; background-color: rgb(196, 196, 196);"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCApnc klDiVf MuiButton-textPrimary MuiButton-fullWidth"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 35px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3v3zm-4 9c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.86-7.01L19.42 4h-.01l-1.1 2-2.76 5H8.53l-.13-.27L6.16 6l-.95-2-.94-2H1v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.13 0-.25-.11-.25-.25z"
+              />
+            </svg>
+            Subscribe
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-10"
+        style="margin-left: 100px; margin-top: 30px; background-color: rgb(196, 196, 196);"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCApnc klDiVf MuiButton-textPrimary MuiButton-fullWidth"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Add to Wishlist
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-11"
+        style="margin-left: 100px; margin-top: 30px;"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCApnc klDiVf MuiButton-textPrimary MuiButton-fullWidth"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root"
+              focusable="false"
+              style="font-size: 40px;"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"
+              />
+            </svg>
+            Share with Others
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

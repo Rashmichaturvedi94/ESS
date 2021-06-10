@@ -44,7 +44,7 @@ sys.path.append(os.path.join(PROJECT_ROOT, "apps/"))
 
 
 # Application definition
-PROJECT_APPS = ["backend.apps.api", "backend.apps.course","backend.apps.sub"]
+PROJECT_APPS = ["backend.apps.api", "backend.apps.accounts","backend.apps.course","backend.apps.sub"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -122,6 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Default User Model
+AUTH_USER_MODEL = "accounts.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

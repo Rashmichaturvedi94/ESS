@@ -109,9 +109,21 @@ export interface User {
   name: string;
   email: string;
   username: string;
+  is_publisher: boolean;
 }
 
 export type UsersResponse = User;
+
+export interface RegisterPayload {
+  username: string;
+  password: string;
+  password2: string;
+  email?: string;
+  name: string;
+  is_publisher?: boolean;
+}
+
+export type RegisterResponse = User;
 
 export interface UserPayload {
   username: string;

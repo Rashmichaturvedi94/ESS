@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Subscriptions should render 1`] = `
+<div>
+  <ul
+    class="MuiGridList-root"
+    style="margin: -2px;"
+  />
+</div>
+`;

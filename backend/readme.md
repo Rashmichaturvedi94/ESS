@@ -23,3 +23,9 @@ Apply migrations to database
 ```python
 python3 manage.py migrate
 ```
+
+To remove everything and tear down volumes of docker
+
+```python
+docker-compose down -v
+```

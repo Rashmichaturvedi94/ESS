@@ -7,7 +7,7 @@ import { Endpoints, QueryKeys } from './api.interface';
 export const endpoints: Endpoints = {
   login: 'token/',
   refreshToken: 'token/refresh/',
-  register: 'register/',
+  register: 'auth/register/',
   courses: 'courses/',
   user: 'users/:userId/',
   course: 'courses/:courseId/',

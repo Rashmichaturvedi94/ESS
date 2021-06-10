@@ -12,6 +12,7 @@ const initialValues: RegisterFormValues = {
   email: '',
   password: '',
   password2: '',
+  is_publisher: false,
 };
 
 const validationSchema: Yup.SchemaOf<RegisterFormValues> = Yup.object().shape({
@@ -20,7 +21,7 @@ const validationSchema: Yup.SchemaOf<RegisterFormValues> = Yup.object().shape({
   email: Yup.string().required('Required field'),
   password: Yup.string().required('Required field'),
   password2: Yup.string().required('Required field'),
-  tag: Yup.string().required('Required field'),
+  is_publisher: Yup.boolean().required('Required field'),
 });
 
 export const RegisterForm: FC<RegisterFormProps> = (props) => {
@@ -90,9 +91,9 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
           value={values.password2}
           onChange={handleChange}
         />
-          <RadioGroup aria-label="Type" name="Type1" value={value} onChange={handleRadioChange}>
-            <RadioField value="Author" control={<Radio color="default" />} label="Author"/>
-            <RadioField value="Student" control={<Radio color="default"/>} label="Student" />
+          <RadioGroup aria-label="Type" name="is_publisher" value={value} onChange={handleRadioChange}>
+            <RadioField value="true" control={<Radio color="default" />} label="Author"/>
+            <RadioField value="false" control={<Radio color="default"/>} label="Student" />
           </RadioGroup>
         <Button type="submit" variant="contained" fullWidth>
           Register

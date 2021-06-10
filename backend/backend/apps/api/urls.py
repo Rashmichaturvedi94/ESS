@@ -1,9 +1,8 @@
+from backend.apps.accounts.views import AuthViewSet, UserViewSet
 from backend.apps.sub.views import SubViewSet
-from django.contrib import admin
-from django.conf.urls import url
 from django.urls import path, include
 from rest_framework import routers
-from backend.apps.api.views import UserViewSet, EssTokenObtainPairView
+from backend.apps.api.views import EssTokenObtainPairView
 from backend.apps.course.views import CourseViewSet
 from backend.apps.course.views import CourseContentsViewSet
 from drf_spectacular.views import (
@@ -16,7 +15,8 @@ from rest_framework_simplejwt.views import (
 )
 
 router = routers.SimpleRouter()
-router.register("users", UserViewSet)
+router.register("auth", AuthViewSet, basename="auth")
+router.register("users", UserViewSet, basename="users")
 router.register("courses", CourseViewSet, basename="courses")
 router.register("courseContents", CourseContentsViewSet, basename="courseContents")
 router.register("subscriptions",SubViewSet,basename="subscriptions")

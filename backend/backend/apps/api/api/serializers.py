@@ -1,17 +1,6 @@
-from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'groups']
-
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'name']
+from django.core.exceptions import ImproperlyConfigured
 
 
 class EssTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -21,3 +10,21 @@ class EssTokenObtainPairSerializer(TokenObtainPairSerializer):
         token["is_staff"] = user.is_staff
         token["username"] = user.username
         return token
+
+
+class EmptySerializer(serializers.Serializer):
+    pass
+
+
+class SerializerByMethodViewSetMixin:
+    serializer_classes = {}
+
+    def get_serializer_class(self):
+        if not isinstance(self.serializer_classes, dict):
+            raise ImproperlyConfigured(
+                "serializer_classes should be a dict mapping."
+            )
+
+        if self.action in self.serializer_classes.keys():
+            return self.serializer_classes[self.action]
+        return super().get_serializer_class()

@@ -7,7 +7,7 @@ class SubModel(models.Model):
     price = models.FloatField()
     timestamp = models.DateTimeField(auto_now_add = True, auto_now = False, blank = True)
     updated = models.DateTimeField(auto_now = True, blank = True)
-    subscriber = models.ForeignKey(User, on_delete = models.PROTECT, blank = True, null = True)
+    subscriber = models.ForeignKey(to="accounts.User", on_delete = models.PROTECT, blank = True, null = True)
     course = models.ForeignKey(Course, on_delete = models.PROTECT, blank = True, null = True)
     active = models.BooleanField(default=False)
     def __str__(self):

@@ -5,6 +5,7 @@ import DateFnsUtils from '@date-io/date-fns';
 import { ThemeProvider } from 'styled-components';
 import { StylesProvider, MuiThemeProvider } from '@material-ui/core';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { MemoryRouter } from 'react-router-dom';
 import { queryClient } from '../api';
 import { theme } from '../styles/theme';
 
@@ -35,3 +36,19 @@ export const Providers: FC = ({ children }) => (
 );
 
 export const withProviders = createProviderHOC(Providers);
+
+export const TestProviders: FC = ({ children }) => (
+  <StylesProvider injectFirst>
+    <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <QueryClientProvider client={queryClient}>
+            <MemoryRouter>{children}</MemoryRouter>
+          </QueryClientProvider>
+        </MuiPickersUtilsProvider>
+      </ThemeProvider>
+    </MuiThemeProvider>
+  </StylesProvider>
+);
+
+export const withTestProviders = createProviderHOC(TestProviders);

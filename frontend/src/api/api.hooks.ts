@@ -19,10 +19,26 @@ import {
   CourseContentsResponse,
   SubscriptionPayload,
   CourseContents,
+  RegisterResponse,
+  RegisterPayload,
 } from './api.interface';
 import { createMutationFn, createQueryFn } from './api';
 import { getEndpoint } from './api.endpoints';
 import { setToken } from './api.helpers';
+
+export const useRegister = () => useMutation<
+    RegisterResponse,
+    ApiError<RegisterPayload>,
+    QueryParams<RegisterPayload>
+  >(
+    createMutationFn({
+      url: getEndpoint(QueryKeys.register),
+      method: 'POST',
+    }),
+    {
+      mutationKey: QueryKeys.register,
+    },
+  );
 
 export const useLogin = () =>
   useMutation<LoginResponse, ApiError<LoginPayload>, QueryParams<LoginPayload>>(

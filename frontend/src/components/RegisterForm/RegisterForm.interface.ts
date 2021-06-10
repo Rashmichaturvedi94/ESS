@@ -6,6 +6,7 @@ export interface RegisterFormValues {
   email: string;
   password: string;
   password2: string;
+  is_publisher?: boolean;
 }
 
 export type RegisterFormProps = FormProps<RegisterFormValues>;

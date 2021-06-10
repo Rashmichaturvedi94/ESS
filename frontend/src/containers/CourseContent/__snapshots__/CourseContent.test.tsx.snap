@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/CourseContent should render 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM iNeoZH"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-1"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2"
+        style="margin: 2px;"
+      >
+        <div
+          class="MuiBox-root MuiBox-root-3"
+          style="padding: 2px;"
+        >
+          <h2
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-alignLeft"
+          >
+            You are watching
+          </h2>
+        </div>
+        <div
+          style="width: 640px; height: 360px;"
+        />
+      </div>
+      <hr
+        class="MuiDivider-root MuiDivider-vertical"
+        style="color: black; width: 5px;"
+      />
+      <div
+        class="MuiBox-root MuiBox-root-4"
+      >
+        <ul
+          class="MuiGridList-root"
+          style="margin: -2px;"
+        >
+          <h4
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter"
+            style="width: 50%; height: 184px; padding: 2px;"
+          >
+            Lessons
+          </h4>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

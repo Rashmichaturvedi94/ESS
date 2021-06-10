@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/ProfileForm should render 1`] = `
+<div>
+  <form>
+    <div
+      class="MuiBox-root MuiBox-root-1"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root sc-gtsrHT bdAwyA MuiFormControl-fullWidth"
+      >
+        <div
+          class="MuiInputBase-root MuiInput-root Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiInput-input Mui-disabled Mui-disabled"
+            disabled=""
+            name="name"
+            placeholder="Name"
+            type="text"
+            value="1"
+          />
+        </div>
+      </div>
+      <div
+        class="MuiFormControl-root MuiTextField-root sc-dlnjwi cqBiuT MuiFormControl-fullWidth"
+      >
+        <div
+          class="MuiInputBase-root MuiInput-root Mui-disabled Mui-disabled MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiInput-input Mui-disabled Mui-disabled"
+            disabled=""
+            name="username"
+            placeholder="Username"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="MuiFormControl-root MuiTextField-root sc-hKFxyN GcSgM MuiFormControl-fullWidth"
+      >
+        <div
+          class="MuiInputBase-root MuiInput-root MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiInput-input"
+            name="email"
+            placeholder="Email"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
+        tabindex="0"
+        type="submit"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Save
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </form>
+</div>
+`;

@@ -1,6 +1,7 @@
 export { queryClient } from "./api";
 
 export {
+  useRegister,
   useLogin,
   useCourses,
   useCourse,
