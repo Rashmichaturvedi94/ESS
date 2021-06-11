@@ -55,9 +55,7 @@ export interface LoginResponse {
 export interface AccessToken extends JwtPayload {
   user_id: number;
   is_staff: boolean;
-  is_creator: boolean;
   username: string;
-  display_name: string;
 }
 
 export interface AccessError extends Error {

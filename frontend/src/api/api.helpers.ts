@@ -33,6 +33,9 @@ export const getRefreshToken = () =>
   getStorage().getItem(StorageKeys.REFRESH_TOKEN);
 
 export const getUserIdFromLocalStorage = () => {
+  if (!window.localStorage.getItem(StorageKeys.ACCESS_TOKEN)){
+    return 0;
+  }
   const decoded = jwt_decode<AccessToken>(window.localStorage.getItem(StorageKeys.ACCESS_TOKEN) as string);
   return decoded.user_id;
 };
