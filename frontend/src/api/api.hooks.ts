@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 import jwt_decode from 'jwt-decode';
 import {
   AccessError,
@@ -95,17 +95,19 @@ export const useUserMe = () =>
       queryKey: QueryKeys.userMe,
     });
 
-export const useUpdateUserEmail = () =>
-    useMutation<UserPayload, ApiError<UserPayload>, QueryParams<UsersParams>>(
-      createMutationFn({
-        url: getEndpoint(QueryKeys.user),
-        method: 'PUT',
-      }),
-      {
-        mutationKey: QueryKeys.user,
-        onSuccess: () =>{},
-      }
-    );
+export const useUpdateUserEmail = () => {
+  const queryClient = useQueryClient();
+ return (
+  useMutation<UserPayload, ApiError<UserPayload>, QueryParams<UsersParams>>(
+    createMutationFn({
+      url: getEndpoint(QueryKeys.user),
+      method: 'PUT',
+    }),
+    {
+      mutationKey: QueryKeys.user,
+      onSuccess: () => { queryClient.invalidateQueries(QueryKeys.userMe); },
+    }));
+};
 
 export const usePostCourse = () =>
     useMutation<Course, ApiError<Course>, QueryParams<Course>>(

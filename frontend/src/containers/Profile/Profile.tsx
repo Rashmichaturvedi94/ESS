@@ -18,7 +18,7 @@ export const Profile: FC<ProfileProps> = () => {
         </IconBox>
         <Box display="flex" flexDirection="column" width={320} gridRowGap={20}>
           <ProfileForm
-            initialValues={{name: user.data?.username ?? '', username: user.data?.username ?? '', email: user.data?.email ?? '', userId: user.data?.id ?? 0 }}
+            initialValues={{name: user.data?.name ?? '', username: user.data?.username ?? '', email: user.data?.email ?? '', userId: user.data?.id ?? 0 }}
             onSubmit={(data) =>{
                 mutate({ data, params: { userId: user.data?.id } });
             }

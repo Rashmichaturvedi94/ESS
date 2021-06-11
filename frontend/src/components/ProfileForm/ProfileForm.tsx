@@ -33,15 +33,6 @@ export const ProfileForm: FC<ProfileFormProps> = (props) => {
         {errors?.detail && (
           <FormHelperText error>{errors?.detail}</FormHelperText>
         )}
-        <NameField
-          fullWidth
-          name="name"
-          placeholder='Name'
-          error={!!errors.name}
-          helperText={errors.name}
-          value={values.name}
-          disabled
-        />
         <UsernameField
           fullWidth
           name="username"
@@ -50,6 +41,15 @@ export const ProfileForm: FC<ProfileFormProps> = (props) => {
           helperText={errors.username}
           value={values.username}
           disabled
+        />
+        <NameField
+          fullWidth
+          name="name"
+          placeholder='Name'
+          error={!!errors.name}
+          helperText={errors.name}
+          value={values.name}
+          onChange={handleChange}
         />
         <EmailField
           fullWidth
