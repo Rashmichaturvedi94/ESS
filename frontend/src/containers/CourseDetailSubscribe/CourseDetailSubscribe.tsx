@@ -23,7 +23,7 @@ import { appPaths } from "../../const/paths";
 export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
-  const publisher = useUser();
+  const publisher = useUser({ userId: (course.data?.created_by as number) });
   const history = useHistory();
   const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : '';
 

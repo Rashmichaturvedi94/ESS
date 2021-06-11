@@ -13,7 +13,6 @@ export const endpoints: Endpoints = {
   course: 'courses/:courseId/',
   courseContents: 'courseContents/',
   subscriptions: 'subscriptions/',
-  getUser:'users/me/'
 };
 
 

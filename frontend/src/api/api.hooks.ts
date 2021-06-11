@@ -79,12 +79,12 @@ export const useCourses = () =>
       queryKey: QueryKeys.courses,
     });
 
-export const useUser = () =>
+export const useUser = (params: UsersParams) =>
     useQuery<UsersResponse>({
       queryFn: createQueryFn({
-        url: getEndpoint(QueryKeys.getUser),
+        url: getEndpoint(QueryKeys.user),
       }),
-      queryKey: [QueryKeys.user],
+      queryKey: [QueryKeys.user, params],
     });
 
 export const useUpdateUserEmail = () =>

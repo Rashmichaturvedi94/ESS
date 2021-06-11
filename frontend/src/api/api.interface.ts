@@ -20,7 +20,6 @@ export enum QueryKeys {
   course = "course",
   courseContents = "courseContents",
   subscriptions = "subscriptions",
-  getUser = "getUser"
 }
 
 export interface RequestConfig extends AxiosRequestConfig {

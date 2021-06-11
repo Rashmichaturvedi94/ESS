@@ -9,7 +9,7 @@ import { useUser, useUpdateUserEmail } from '../../api';
 import { getUserIdFromLocalStorage } from '../../api/api.helpers';
 
 export const Profile: FC<ProfileProps> = () => {
-  const user  = useUser();
+  const user  = useUser({ userId: getUserIdFromLocalStorage()});
   const { mutate } = useUpdateUserEmail();
   
   // const history = useHistory();
@@ -23,7 +23,7 @@ export const Profile: FC<ProfileProps> = () => {
     <ProfileForm
        initialValues={{name: user.data?.username ?? '', username: user.data?.username ?? '', email: user.data?.email ?? '', userId: getUserIdFromLocalStorage()}}
        onSubmit={(data) =>{
-          mutate({ data, params: {userId: user.data?.id ?? 0 } });
+          mutate({ data, params: {userId: getUserIdFromLocalStorage() } });
        }
       }
     />
