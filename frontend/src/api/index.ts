@@ -6,6 +6,7 @@ export {
   useCourses,
   useCourse,
   useUser,
+  useUserMe,
   useUpdateUserEmail,
   usePostCourse,
   usePostSubscription,

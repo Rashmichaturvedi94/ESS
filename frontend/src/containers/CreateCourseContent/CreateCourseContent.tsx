@@ -10,7 +10,6 @@ import { CourseParams } from '../../api/api.interface';
 export const CreateCourseContent: FC<CreateCourseContentProps> = () => {  
   const { mutate } = usePostCourseContent();
   const  { courseId } = useParams<CourseParams>();
-  console.log(courseId);
   
   return (
     <CreateCourseContentComponent>

@@ -10,6 +10,7 @@ export const endpoints: Endpoints = {
   register: 'auth/register/',
   courses: 'courses/',
   user: 'users/:userId/',
+  userMe: 'users/me/',
   course: 'courses/:courseId/',
   courseContents: 'courseContents/',
   subscriptions: 'subscriptions/',

@@ -17,6 +17,7 @@ export enum QueryKeys {
   register = "register",
   courses = "courses",
   user = "user",
+  userMe = "userMe",
   course = "course",
   courseContents = "courseContents",
   subscriptions = "subscriptions",

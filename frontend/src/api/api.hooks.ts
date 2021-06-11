@@ -87,6 +87,14 @@ export const useUser = (params: UsersParams) =>
       queryKey: [QueryKeys.user, params],
     });
 
+export const useUserMe = () =>
+    useQuery<UsersResponse>({
+      queryFn: createQueryFn({
+        url: getEndpoint(QueryKeys.userMe),
+      }),
+      queryKey: QueryKeys.userMe,
+    });
+
 export const useUpdateUserEmail = () =>
     useMutation<UserPayload, ApiError<UserPayload>, QueryParams<UsersParams>>(
       createMutationFn({

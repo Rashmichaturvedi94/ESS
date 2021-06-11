@@ -36,7 +36,7 @@ export const CourseContent: FC<CourseContentProps> = () => {
               {course.data?.contents?.map((content) => (
                 <GridListTile key={content.id} style={{ height: 110, width: 560, border: '2px solid black', margin: 2 }}>
                   <Button onClick={() => setCurrentVideo('https://www.youtube.com/watch?v=GvGzFSkSQo4')}>
-                    <Box flex={1} display="flex" alignItems="left" justifyContent="top" style={{backgroundColor:'#FFFFFF'}}> 
+                    <Box flex={1} display="flex" alignItems="left" justifyContent="top" style={{ backgroundColor: 'white' }}> 
                       <Box>
                         <img src={getImage(content)} style={{ height: 110, width:110, overflow: 'hidden' }} alt={content.title}/>
                       </Box>
