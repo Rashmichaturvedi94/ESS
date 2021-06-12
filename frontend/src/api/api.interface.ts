@@ -56,6 +56,7 @@ export interface AccessToken extends JwtPayload {
   user_id: number;
   is_staff: boolean;
   username: string;
+  is_publisher?: boolean;
 }
 
 export interface AccessError extends Error {

@@ -18,9 +18,7 @@ exports[`components/CourseContent should render 1`] = `
         >
           <h2
             class="MuiTypography-root MuiTypography-h3 MuiTypography-alignLeft"
-          >
-            You are watching
-          </h2>
+          />
         </div>
         <div
           style="width: 640px; height: 360px;"
@@ -37,12 +35,12 @@ exports[`components/CourseContent should render 1`] = `
           class="MuiGridList-root"
           style="margin: -2px;"
         >
-          <h4
-            class="MuiTypography-root MuiTypography-h3 MuiTypography-alignCenter"
+          <p
+            class="MuiTypography-root sc-dlnjwi FzyQW MuiTypography-body1"
             style="width: 50%; height: 184px; padding: 2px;"
           >
             Lessons
-          </h4>
+          </p>
         </ul>
       </div>
     </div>

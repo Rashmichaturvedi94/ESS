@@ -11,7 +11,7 @@ export const Subscription: FC = () => {
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
   const { mutate } = usePostSubscription();
-  const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : '';
+  const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : 'https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622';
 
   return (
     <SubContainer>

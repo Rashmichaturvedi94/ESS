@@ -4,6 +4,7 @@ export interface CreateCourseContentFormValues {
   title: string;
   description: string;
   imgSrc: string;
+  url: string;
   course: number;
   created_by: number;
   img?: File;

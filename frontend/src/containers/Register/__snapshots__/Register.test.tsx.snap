@@ -139,9 +139,9 @@ exports[`components/Register should render 1`] = `
                   >
                     <input
                       class="PrivateSwitchBase-input-8"
-                      name="Type1"
+                      name="is_publisher"
                       type="radio"
-                      value="Author"
+                      value="true"
                     />
                     <div
                       class="PrivateRadioButtonIcon-root-9"
@@ -190,9 +190,9 @@ exports[`components/Register should render 1`] = `
                   >
                     <input
                       class="PrivateSwitchBase-input-8"
-                      name="Type1"
+                      name="is_publisher"
                       type="radio"
-                      value="Student"
+                      value="false"
                     />
                     <div
                       class="PrivateRadioButtonIcon-root-9"

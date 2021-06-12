@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Subscription should render 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM bOAqhc"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-1"
+      style="margin-left: 50px; margin-top: 50px;"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2"
+        style="margin-left: 40px; margin-right: 110px;"
+      >
+        <img
+          src="https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622"
+          style="height: 450px; width: 600px; overflow: hidden;"
+        />
+      </div>
+    </div>
+    <form>
+      <div
+        class="MuiBox-root MuiBox-root-3"
+      >
+        <p
+          class="MuiTypography-root sc-crzoAE ccmNSu MuiTypography-body1"
+        >
+          tttt
+        </p>
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root sc-dIsUp RZxpu MuiInputLabel-shrink"
+          data-shrink="true"
+        >
+          tttt
+        </label>
+        <div
+          class="sc-kEqXSa dcUPjU"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            style="font-size: 40px; margin-left: 20px;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"
+            />
+          </svg>
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root sc-ksluID lkVrRi MuiInputLabel-shrink"
+            data-shrink="true"
+          >
+            Price:
+          </label>
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root sc-ksluID lkVrRi MuiInputLabel-shrink"
+            data-shrink="true"
+          >
+            $
+            10
+          </label>
+        </div>
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root sc-bqGGPW caTuyd MuiInputLabel-shrink"
+          data-shrink="true"
+        >
+          Choose Payment method
+        </label>
+        <div
+          class="sc-iqAclL kICOAC"
+        >
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+            style="background: grey; margin-left: 10px;"
+            tabindex="0"
+            type="submit"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Pay by Card
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+            style="background: grey; margin-left: 50px;"
+            tabindex="0"
+            type="submit"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Pay by Blik
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

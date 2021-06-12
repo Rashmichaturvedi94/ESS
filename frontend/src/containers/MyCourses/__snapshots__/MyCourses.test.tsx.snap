@@ -11,6 +11,10 @@ exports[`components/MyCourses should render 1`] = `
     >
       Subscribed
     </h2>
+    <hr
+      class="MuiDivider-root"
+      style="color: black; height: 5px; margin-top: 30px; margin-bottom: 30px;"
+    />
     <ul
       class="MuiGridList-root"
       style="margin: -2px;"

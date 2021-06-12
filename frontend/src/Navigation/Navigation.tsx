@@ -23,6 +23,7 @@ import { CourseDetailSubscribe } from '../containers/CourseDetailSubscribe';
 import { CreateCourseContent } from '../containers/CreateCourseContent';
 import { CourseContent } from '../containers/CourseContent';
 import { Subscription } from '../containers/Subscription';
+import { getIsPublisherLocalStorage } from '../api/api.helpers';
 
 export const Navigation: FC = () => (
     <NavigationComponent>
@@ -44,9 +45,11 @@ export const Navigation: FC = () => (
               <Link to={appPaths.myCourses}>
                 <HomeLink>My Courses</HomeLink>
               </Link>
-              <Link to={appPaths.createCourse}>
-                <HomeLink>Publish</HomeLink>
-              </Link>
+              {getIsPublisherLocalStorage() && 
+                <Link to={appPaths.createCourse}>
+                  <HomeLink>Publish</HomeLink>
+                </Link>
+              }
               <Link to={appPaths.user}>
                 <MyAvatar />
               </Link>

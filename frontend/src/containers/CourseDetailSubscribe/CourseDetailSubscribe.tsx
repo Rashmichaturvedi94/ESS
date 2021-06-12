@@ -25,7 +25,7 @@ export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
   const course = useCourse({ courseId });
   const publisher = useUser({ userId: (course.data?.created_by as number) });
   const history = useHistory();
-  const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : '';
+  const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : 'https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622';
 
   return (
     <CourseDetailSubscribeComponent>

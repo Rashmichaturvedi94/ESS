@@ -13,6 +13,7 @@ const initialValues: CreateCourseContentFormValues = {
   title: '',
   description: '',
   imgSrc: 'testForNow',
+  url: '',
   course: 1,
   created_by: getUserIdFromLocalStorage(),
   img: undefined
@@ -22,6 +23,7 @@ const validationSchema: Yup.SchemaOf<CreateCourseContentFormValues> = Yup.object
   title: Yup.string().required('Required field'),
   description: Yup.string().required('Required field'),
   imgSrc: Yup.string().required('Required field'),
+  url: Yup.string().required('Required field'),
   created_by: Yup.number().required('Required field'),
   course: Yup.number().required('Required field'),
   img: Yup.object().shape({file: Yup.mixed()}).nullable()
@@ -67,6 +69,19 @@ export const CreateCourseContentForm: FC<CreateCourseContentFormProps> = (props)
           rowsMin={4}
           
           value={values.description}
+          onChange={handleChange}
+
+        />
+        <Typography variant="h6" component="h2" align='left'>
+        Video Link
+      </Typography>
+        <NameField
+          fullWidth
+          name="url"
+          placeholder='url'
+          error={!!errors.url}
+          helperText={errors.url}
+          value={values.url}
           onChange={handleChange}
 
         />

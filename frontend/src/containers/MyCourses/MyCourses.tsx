@@ -11,7 +11,7 @@ export const MyCourses: FC<MyCoursesProps> = () => {
   const history = useHistory();
 
   const getImage = (course: Course) =>
-    typeof course.img === "string" ? course.img : "";
+    typeof course.img === "string" ? course.img : "https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622";
   return (
     <Box style={{ marginLeft: 20, marginRight: 20 }}>
       <Typography variant="h4" component="h2" align="left">

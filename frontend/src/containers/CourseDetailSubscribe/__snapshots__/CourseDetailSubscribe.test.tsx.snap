@@ -7,7 +7,7 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
   >
     <div
       class="MuiBox-root MuiBox-root-1"
-      style="margin-left: 50px; margin-top: 50px;"
+      style="margin-left: 50px; margin-top: 40px;"
     >
       <div
         class="MuiBox-root MuiBox-root-2"
@@ -17,7 +17,7 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           aria-hidden="true"
           class="MuiSvgIcon-root"
           focusable="false"
-          style="font-size: 30px;"
+          style="font-size: 35px;"
           viewBox="0 0 24 24"
         >
           <path
@@ -25,21 +25,19 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           />
         </svg>
         <p
-          class="MuiTypography-root sc-gtsrHT eOAXXw MuiTypography-body1"
-        >
-          Author
-        </p>
+          class="MuiTypography-root sc-gtsrHT gbKClj MuiTypography-body1"
+        />
       </div>
       <div
         class="MuiBox-root MuiBox-root-3"
         style="margin-left: 40px; margin-right: 110px;"
       >
         <img
-          src=""
+          src="https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622"
           style="height: 450px; width: 600px; overflow: hidden;"
         />
         <p
-          class="MuiTypography-root sc-dlnjwi FzyQW MuiTypography-body1"
+          class="MuiTypography-root sc-dlnjwi KPEwO MuiTypography-body1"
         />
         <p
           class="MuiTypography-root MuiTypography-body1"

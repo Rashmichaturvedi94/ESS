@@ -9,6 +9,7 @@ class EssTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
         token["is_staff"] = user.is_staff
         token["username"] = user.username
+        token["is_publisher"] = user.is_publisher
         return token
 
 

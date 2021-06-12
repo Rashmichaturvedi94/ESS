@@ -7,24 +7,24 @@ exports[`components/SubscriptionForm should render 1`] = `
       class="MuiBox-root MuiBox-root-1"
     >
       <p
-        class="MuiTypography-root sc-dlnjwi gIeIxe MuiTypography-body1"
+        class="MuiTypography-root sc-dlnjwi eeRGHs MuiTypography-body1"
       >
         test
       </p>
       <label
-        class="MuiFormLabel-root MuiInputLabel-root sc-hKFxyN fIcukl MuiInputLabel-shrink"
+        class="MuiFormLabel-root MuiInputLabel-root sc-hKFxyN bUXCdL MuiInputLabel-shrink"
         data-shrink="true"
       >
         test
       </label>
       <div
-        class="sc-bdnxRM ijokhQ"
+        class="sc-bdnxRM bALbhm"
       >
         <svg
           aria-hidden="true"
           class="MuiSvgIcon-root"
           focusable="false"
-          style="font-size: 40px;"
+          style="font-size: 40px; margin-left: 20px;"
           viewBox="0 0 24 24"
         >
           <path
@@ -32,13 +32,13 @@ exports[`components/SubscriptionForm should render 1`] = `
           />
         </svg>
         <label
-          class="MuiFormLabel-root MuiInputLabel-root sc-jSFjdj jfMEkW MuiInputLabel-shrink"
+          class="MuiFormLabel-root MuiInputLabel-root sc-jSFjdj oOVTV MuiInputLabel-shrink"
           data-shrink="true"
         >
           Price:
         </label>
         <label
-          class="MuiFormLabel-root MuiInputLabel-root sc-jSFjdj jfMEkW MuiInputLabel-shrink"
+          class="MuiFormLabel-root MuiInputLabel-root sc-jSFjdj oOVTV MuiInputLabel-shrink"
           data-shrink="true"
         >
           $
@@ -46,13 +46,13 @@ exports[`components/SubscriptionForm should render 1`] = `
         </label>
       </div>
       <label
-        class="MuiFormLabel-root MuiInputLabel-root sc-eCApnc iNiMum MuiInputLabel-shrink"
+        class="MuiFormLabel-root MuiInputLabel-root sc-eCApnc gsLlrP MuiInputLabel-shrink"
         data-shrink="true"
       >
         Choose Payment method
       </label>
       <div
-        class="sc-gtsrHT cMLYIe"
+        class="sc-gtsrHT ehrWiq"
       >
         <button
           class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"

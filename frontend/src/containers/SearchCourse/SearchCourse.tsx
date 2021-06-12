@@ -10,7 +10,7 @@ import { Course } from '../../api/api.interface';
 export const SearchCourse: FC<SearchCourseProps> = () => {
   const courses = useCourses();
   const history = useHistory();
-  const getImage = (course: Course) => typeof course.img === 'string' ? course.img : '';
+  const getImage = (course: Course) => typeof course.img === 'string' ? course.img : 'https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622';
 
   return (
     <GridList>

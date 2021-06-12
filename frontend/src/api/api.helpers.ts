@@ -7,6 +7,7 @@ import { getStorage } from './api.platform';
 enum StorageKeys {
   ACCESS_TOKEN = 'access_token',
   REFRESH_TOKEN = 'refresh_token',
+  IS_PUBLISHER = 'is_publisher',
 }
 
 export const setAccessToken = async (accessToken?: string) => {
@@ -54,6 +55,14 @@ export const removeToken = async () => {
 export const getIsAuthenticated = async () => {
   const token = await getAccessToken();
   return !!token;
+};
+
+export const getIsPublisherLocalStorage = () => {
+  if (!window.localStorage.getItem(StorageKeys.ACCESS_TOKEN)){
+    return 0;
+  }
+  const decoded = jwt_decode<AccessToken>(window.localStorage.getItem(StorageKeys.ACCESS_TOKEN) as string);
+  return decoded.is_publisher;
 };
 
 export const getUrlWithParams = <T extends object>(
