@@ -25,7 +25,6 @@ export const Course: FC<CourseProps> = () => {
                         courseId: d.id,
                       })
                     );
-                    console.log(d);
                   },
                 }
               );

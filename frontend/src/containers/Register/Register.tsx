@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Button, Typography } from '@material-ui/core';
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, Typography } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { Register as RegisterComponent } from './Register.styles';
@@ -11,6 +11,12 @@ import { useRegister } from '../../api';
 export const Register: FC<RegisterProps> = () => {
   const { error, mutate } = useRegister();
   const history = useHistory();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+    history.push(paths.login);
+  };
 
   return (
   <RegisterComponent>
@@ -25,8 +31,23 @@ export const Register: FC<RegisterProps> = () => {
       <Box display="flex" flexDirection="column" width="55%" gridRowGap={20}>
         <RegisterForm
           errors={error?.response?.data}
-          onSubmit={(data) => mutate({ data })}
+          onSubmit={(data) => mutate({ data }, { onSuccess:() => {setOpen(true); }  })}
         />
+        <Dialog
+            open={open}
+            onClose={handleClose}
+          >
+          <DialogContent>
+            <DialogContentText>
+              Account successfully created.Please Login.
+            </DialogContentText>
+          </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose} color="primary" autoFocus>
+                OK
+              </Button>
+            </DialogActions>
+          </Dialog>
         <Button
           fullWidth
           variant="text"
