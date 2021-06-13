@@ -17,8 +17,8 @@ test("Test Default Image", () => {
     course: 1,
     created_by: 2,
   };
-  const fName = getImage(cc);
-  expect(fName).toBe(
+  const imgPath = getImage(cc);
+  expect(imgPath).toBe(
     "https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622"
   );
 });
@@ -31,6 +31,6 @@ test("Test Given Image", () => {
     created_by: 2,
     img: "myImageURL",
   };
-  const fName = getImage(cc);
-  expect(fName).toBe("myImageURL");
+  const imgPath = getImage(cc);
+  expect(imgPath).toBe("myImageURL");
 });
