@@ -11,7 +11,7 @@ import { appPaths } from "../../const/paths";
 export const Subscription: FC = () => {
   const history = useHistory();
   const { courseId } = useParams<CourseParams>();
-  const course = useCourse({ courseId });
+  const { isLoading, data:course } = useCourse({ courseId });
   const { mutate } = usePostSubscription();
   const getImage = (courseObj?: Course) => typeof courseObj?.img === 'string' ? courseObj?.img : 'https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622';
   const [open, setOpen] = React.useState(false);
@@ -32,18 +32,19 @@ export const Subscription: FC = () => {
       <Box style={{ marginLeft: 50, marginTop: 50 }}>
         <Box style={{ marginLeft: 40, marginRight: 110 }}>
           <img
-            src={getImage(course.data)}
+            src={getImage(course)}
             style={{ height: 450, width: 600, overflow: "hidden" }}
-            alt={course.data?.title}
+            alt={course?.title}
           />
         </Box>
       </Box>
 
       <SubscriptionForm
+        isLoading={isLoading}
         initialValues={{
-          title: course.data?.title ?? "",
-          description: course.data?.description ?? "",
-          price: course.data?.price ?? 10,
+          title: course?.title ?? "",
+          description: course?.description ?? "",
+          price: course?.price ?? 10,
           course: courseId as unknown as number ?? 0,
           subscriber: getUserIdFromLocalStorage() ?? 0,
           active: true,

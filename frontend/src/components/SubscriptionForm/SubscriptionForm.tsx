@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Box, Button, FormHelperText } from "@material-ui/core";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
-
 import {
   SubFormValues,
   SubscriptionFormProps,
@@ -26,6 +25,7 @@ const initialValues: SubFormValues = {
 };
 
 export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
+  const { isLoading } = props;
   const { errors, values, handleSubmit } = useForm({
     initialValues,
     ...props,
@@ -51,6 +51,7 @@ export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
             type="submit"
             variant="contained"
             style={{ background: "grey", marginLeft: 10 }}
+            disabled={isLoading}
           >
             Pay by Card
           </Button>
@@ -58,6 +59,7 @@ export const SubscriptionForm: FC<SubscriptionFormProps> = (props) => {
             type="submit"
             variant="contained"
             style={{ background: "grey", marginLeft: 50 }}
+            disabled={isLoading}
           >
             Pay by Blik
           </Button>
