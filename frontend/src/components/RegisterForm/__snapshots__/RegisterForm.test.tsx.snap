@@ -82,7 +82,7 @@ exports[`components/RegisterForm should render 1`] = `
             class="MuiInputBase-input MuiInput-input"
             name="password2"
             placeholder="Confirm Password"
-            type="password2"
+            type="password"
             value=""
           />
         </div>

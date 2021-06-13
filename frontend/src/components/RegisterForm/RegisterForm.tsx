@@ -31,12 +31,6 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
     ...props,
   });
 
-  const [value, setValue] = React.useState('');
-
-  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
-
   // eslint-disable-next-line no-return-assign
   return (
     <form onSubmit={handleSubmit}>
@@ -84,14 +78,14 @@ export const RegisterForm: FC<RegisterFormProps> = (props) => {
         <PasswordField
           fullWidth
           name="password2"
-          type="password2"
+          type="password"
           placeholder='Confirm Password'
           error={!!errors.password2}
           helperText={errors.password2}
           value={values.password2}
           onChange={handleChange}
         />
-          <RadioGroup aria-label="Type" name="is_publisher" value={value} onChange={handleRadioChange}>
+          <RadioGroup aria-label="Type" name="is_publisher" value={values.is_publisher} onChange={handleChange}>
             <RadioField value="true" control={<Radio color="default" />} label="Author"/>
             <RadioField value="false" control={<Radio color="default"/>} label="Student" />
           </RadioGroup>

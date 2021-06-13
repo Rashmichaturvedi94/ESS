@@ -25,14 +25,12 @@ exports[`components/Subscription should render 1`] = `
       >
         <p
           class="MuiTypography-root sc-crzoAE ccmNSu MuiTypography-body1"
-        >
-          tttt
-        </p>
+        />
         <label
           class="MuiFormLabel-root MuiInputLabel-root sc-dIsUp RZxpu MuiInputLabel-shrink"
           data-shrink="true"
         >
-          tttt
+          
         </label>
         <div
           class="sc-kEqXSa dcUPjU"
