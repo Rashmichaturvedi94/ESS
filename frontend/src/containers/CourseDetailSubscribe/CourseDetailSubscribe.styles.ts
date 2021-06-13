@@ -17,6 +17,12 @@ export const CourseText = styled(Typography)`
   font-weight: 700;
 `;
 
+export const DescriptionText = styled(Typography)`
+  font-size: 20px;
+  font-weight: 80;
+  width: 700px;
+`;
+
 export const DetailText = styled(Typography)`
   font-size: 25px;
   font-weight: 100;

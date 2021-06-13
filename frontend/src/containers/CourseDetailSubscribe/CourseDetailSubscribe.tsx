@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Typography, Box, Divider } from "@material-ui/core";
+import { Box, Divider } from "@material-ui/core";
 import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import LayersIcon from "@material-ui/icons/Layers";
@@ -14,6 +14,7 @@ import {
   CourseText,
   DetailText,
   ButtonText,
+  DescriptionText,
 } from "./CourseDetailSubscribe.styles";
 import { CourseDetailSubscribeProps } from "./CourseDetailSubscribe.interface";
 import { useCourse, useUser } from "../../api";
@@ -41,7 +42,7 @@ export const CourseDetailSubscribe: FC<CourseDetailSubscribeProps> = () => {
             alt={course.data?.title}
           />
           <CourseText>{course.data?.title}</CourseText>
-          <Typography>{course.data?.description}</Typography>
+          <DescriptionText>{course.data?.description}</DescriptionText>
         </Box>
       </Box>
       <Divider orientation="vertical" style={{ color: "black", width: 5 }} />

@@ -104,6 +104,9 @@ export const CourseForm: FC<CourseFormProps> = (props) => {
           InputProps={{ inputMode: 'numeric' }}
           type="number"
         />
+        <Typography variant="body1" component="h4" align='left'>
+          Thumbnail
+        </Typography>
         <Button
             variant="contained"
             component="label"

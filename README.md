@@ -12,6 +12,8 @@ Docker Desktop software 3.3.3 [download link](https://www.docker.com/products/do
 
 # Building instructions
 
+Make a copy of .env_example to .env in main ESS folder, frontend and backend to have secure passwords for databases and environment.
+
 Run command
 
 ```

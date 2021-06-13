@@ -40,7 +40,7 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           class="MuiTypography-root sc-dlnjwi KPEwO MuiTypography-body1"
         />
         <p
-          class="MuiTypography-root MuiTypography-body1"
+          class="MuiTypography-root sc-hKFxyN dLFmBp MuiTypography-body1"
         />
       </div>
     </div>
@@ -70,12 +70,12 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           />
         </svg>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         >
           Duration
         </p>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         />
       </div>
       <div
@@ -94,12 +94,12 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           />
         </svg>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         >
           Lessons
         </p>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         />
       </div>
       <div
@@ -118,12 +118,12 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           />
         </svg>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         >
           Participants
         </p>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         />
       </div>
       <div
@@ -142,12 +142,12 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
           />
         </svg>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         >
           Price
         </p>
         <p
-          class="MuiTypography-root sc-hKFxyN efEEbx MuiTypography-body1"
+          class="MuiTypography-root sc-eCApnc ehpLRV MuiTypography-body1"
         >
           $
         </p>
@@ -157,7 +157,7 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
         style="margin-left: 100px; margin-top: 90px; background-color: rgb(196, 196, 196);"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCApnc klDiVf MuiButton-textPrimary MuiButton-fullWidth"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-jSFjdj epapSq MuiButton-textPrimary MuiButton-fullWidth"
           tabindex="0"
           type="button"
         >
@@ -187,7 +187,7 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
         style="margin-left: 100px; margin-top: 30px; background-color: rgb(196, 196, 196);"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCApnc klDiVf MuiButton-textPrimary MuiButton-fullWidth"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-jSFjdj epapSq MuiButton-textPrimary MuiButton-fullWidth"
           tabindex="0"
           type="button"
         >
@@ -206,7 +206,7 @@ exports[`components/CourseDetailSubscribe should render 1`] = `
         style="margin-left: 100px; margin-top: 30px;"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-eCApnc klDiVf MuiButton-textPrimary MuiButton-fullWidth"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text sc-jSFjdj epapSq MuiButton-textPrimary MuiButton-fullWidth"
           tabindex="0"
           type="button"
         >
