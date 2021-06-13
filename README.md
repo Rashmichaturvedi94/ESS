@@ -6,6 +6,10 @@ The project will provide the platform to learner which will be available around 
 
 The application is using React Native CLI. The code editor used is [Visual Studio Code](https://code.visualstudio.com/)
 
+# Requirements
+
+Docker Desktop software 3.3.3 [download link](https://www.docker.com/products/docker-desktop)
+
 # Building instructions
 
 Run command
