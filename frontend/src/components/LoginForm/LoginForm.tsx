@@ -23,7 +23,7 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
   });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="loginForm">
       <Box display="flex" flexDirection="column" gridRowGap={20} alignItems="center">
         {errors?.detail && (
           <FormHelperText error>{errors?.detail}</FormHelperText>
