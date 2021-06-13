@@ -9,11 +9,12 @@ import {
   CourseContent as CourseContentComponent, LessonText
 } from './CourseContent.styles';
 
+export const getImage = (courseContent: CourseContents) => typeof courseContent.img === 'string' ? courseContent.img : 'https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622';
+     
 export const CourseContent: FC<CourseContentProps> = () => {
 
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
-  const getImage = (courseContent: CourseContents) => typeof courseContent.img === 'string' ? courseContent.img : 'https://content.techgig.com/thumb/msid-79844104,width-860,resizemode-4/5-Best-programming-languages-to-learn-in-2021.jpg?140622';
   const [currentVideo, setCurrentVideo] = useState(course.data?.contents?.length ? course.data?.contents[0].url : '');
 
   return (
