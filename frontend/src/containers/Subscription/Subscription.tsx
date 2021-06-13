@@ -1,13 +1,15 @@
 import React, { FC } from "react";
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText } from "@material-ui/core";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { SubContainer } from "./Subscription.styles";
 import { useCourse, usePostSubscription } from "../../api";
 import { SubscriptionForm } from "../../components/SubscriptionForm";
 import { getUserIdFromLocalStorage } from "../../api/api.helpers";
 import { Course, CourseParams } from "../../api/api.interface";
+import { appPaths } from "../../const/paths";
 
 export const Subscription: FC = () => {
+  const history = useHistory();
   const { courseId } = useParams<CourseParams>();
   const course = useCourse({ courseId });
   const { mutate } = usePostSubscription();
@@ -18,6 +20,7 @@ export const Subscription: FC = () => {
 
   const handleClose = () => {
     setOpen(false);
+    history.push(appPaths.myCourses);
   };
 
   const handleCloseError = () => {
@@ -41,21 +44,14 @@ export const Subscription: FC = () => {
           title: course.data?.title ?? "",
           description: course.data?.description ?? "",
           price: course.data?.price ?? 10,
-          course: course.data?.id ?? 0,
+          course: courseId as unknown as number ?? 0,
           subscriber: getUserIdFromLocalStorage() ?? 0,
           active: true,
         }}
         onSubmit={(data) => {
-          mutate({
-            data,
-            params: {
-              price: course.data?.price,
-              course: course.data?.id,
-              subscriber: getUserIdFromLocalStorage(),
-              active: true,
-            },
-          }, 
-          { onSuccess:() => {setOpen(true); }, onError:() => {setOpenError(true); }});
+          mutate(
+          {data}, 
+          { onSuccess:() => { setOpen(true); }, onError:() => { setOpenError(true); }});
         }}
       />
       <Dialog
